@@ -1,0 +1,21 @@
+{
+  "startPath": "/module-1",
+  "modules": [
+    {
+      "id": "module-1",
+      "moduleUrl": "/modules/module-1/module.mjs",
+      "startPath": "/module-1",
+      "routes": [
+        { "path": "/module-1" }
+      ]
+    },
+    {
+      "id": "module-2",
+      "moduleUrl": "/modules/module-2/module.mjs",
+      "startPath": "/module-2",
+      "routes": [
+        { "path": "/module-2" }
+      ]
+    }
+  ]
+}

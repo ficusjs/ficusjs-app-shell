@@ -1,0 +1,10 @@
+.github
+test
+public
+cypress
+.editorconfig
+.idea
+.vscode
+cypress.json
+favicon.ico
+coverage

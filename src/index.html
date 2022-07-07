@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>FicusJS App Shell Example App</title>
+    <link rel="apple-touch-icon" href="/assets/img/icon.png">
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+    <meta name="description" content="FicusJS App Shell Example App">
+    <meta name="theme-color" content="#242424">
+    <link rel="manifest" href="/app.webmanifest">
+    <style>
+      body { font-family: sans-serif; }
+    </style>
+    <!-- build:js inline ../tmp/service-worker/main.mjs -->
+    <!-- /build -->
+    <!-- build:js inline ../tmp/main.mjs -->
+    <script type="module" src="/main.mjs"></script>
+    <!-- /build -->
+  </head>
+  <body>
+    <example-app></example-app>
+  </body>
+</html>

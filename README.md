@@ -1,2 +1,3 @@
-# ficusjs-app-shell
-FicusJS application shell for micro frontends
+# FicusJS App Shell
+
+FicusJS application shell for micro front-ends.
