@@ -6,7 +6,7 @@
       "moduleUrl": "/modules/module-1/module.mjs",
       "startPath": "/module-1",
       "routes": [
-        { "path": "/module-1" }
+        "/module-1"
       ]
     },
     {
@@ -14,7 +14,7 @@
       "moduleUrl": "/modules/module-2/module.mjs",
       "startPath": "/module-2",
       "routes": [
-        { "path": "/module-2" }
+        "/module-2"
       ]
     }
   ]

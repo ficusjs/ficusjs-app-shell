@@ -1,6 +1,6 @@
-import { createCustomElement, getAppState, html, renderer, withStore } from '../util/shell-runtime.mjs'
-import { storeNames } from '../stores/constants.mjs'
-import { router } from '../router.mjs'
+import { createCustomElement, getAppState, html, renderer, withStore } from '../../shell-runtime/util/shell-runtime.mjs'
+import { storeNames } from '../../shell-runtime/stores/constants.mjs'
+import { router } from '../../shell-runtime/router.mjs'
 
 createCustomElement(
   'ficus-app-shell-nav',

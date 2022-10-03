@@ -1,7 +1,10 @@
+// @ts-nocheck
 import { createCustomElement } from '@ficusjs/core'
+import { getEventBus } from '@ficusjs/event-bus'
 import { getI18n, withI18n } from '@ficusjs/i18n'
 import { getRouter } from '@ficusjs/router'
 import {
+  addXStateService,
   assign,
   createAppState,
   createMachine,
@@ -16,6 +19,7 @@ import {
 import { html, renderer } from '../util/renderer.mjs'
 
 export {
+  addXStateService,
   assign,
   createAppState,
   createCustomElement,
@@ -23,6 +27,7 @@ export {
   createPersist,
   createXStateService,
   getAppState,
+  getEventBus,
   getI18n,
   getRouter,
   getXStateService,

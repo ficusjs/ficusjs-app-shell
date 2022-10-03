@@ -10,7 +10,7 @@ export function loader () {
     appTag: 'example-app',
 
     // set the router outlet selector
-    routerOutletSelector: '#router-outlet',
+    rootOutletSelector: '#router-outlet',
 
     // add breakpoint configuration
     breakpointConfig: {

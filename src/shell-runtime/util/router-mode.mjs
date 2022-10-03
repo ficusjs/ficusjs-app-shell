@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getAppState } from '@ficusjs/state'
 import { storeNames } from '../stores/constants.mjs'
 

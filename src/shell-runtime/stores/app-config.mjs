@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as helpers from '../util/shell-runtime.mjs'
 import { storeNames } from './constants.mjs'
 import { httpGet } from '../util/http.mjs'
@@ -35,7 +36,7 @@ helpers.createAppState(storeNames.APP_CONFIG, {
   },
   loadConfigModules (appConfig) {
     return Promise.all(
-      appConfig.modules.map(module => this.loadModule(module.moduleUrl))
+      appConfig.modules.filter(m => m.preload).map(module => this.loadModule(module.moduleUrl))
     ).then(() => {
       return Promise.resolve(appConfig)
     })
