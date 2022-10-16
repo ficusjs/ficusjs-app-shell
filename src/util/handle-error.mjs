@@ -14,14 +14,14 @@ export function handleError (getEvents) {
     if (page) {
       page.style.display = 'none'
     }
-    let errorPage = document.querySelector('example-page-error')
+    let errorPage = document.querySelector('fas-page-error')
     if (!errorPage) {
-      errorPage = elementFromString(`<example-page-error logger-error="${e.message}" style="display:none"></example-page-error>`)
+      errorPage = elementFromString(`<fas-page-error logger-error="${e.message}" style="display:none"></fas-page-error>`)
       document.body.appendChild(errorPage)
     }
-    let notFoundPage = document.querySelector('example-page-not-found')
+    let notFoundPage = document.querySelector('fas-page-not-found')
     if (!notFoundPage) {
-      notFoundPage = document.createElement('example-offline')
+      notFoundPage = document.createElement('fas-offline')
       notFoundPage.style.display = 'none'
       document.body.appendChild(notFoundPage)
     }

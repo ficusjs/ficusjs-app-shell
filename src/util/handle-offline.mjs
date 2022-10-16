@@ -6,20 +6,20 @@ function showOffline () {
   if (page) {
     page.style.display = 'none'
   }
-  let offlinePage = document.querySelector('example-offline')
+  let offlinePage = document.querySelector('fas-offline')
   if (!offlinePage) {
-    offlinePage = document.createElement('example-offline')
+    offlinePage = document.createElement('fas-offline')
     document.body.appendChild(offlinePage)
   }
   offlinePage.style.display = 'block'
 }
 
 function showOnline () {
-  const offlinePage = document.querySelector('example-offline')
+  const offlinePage = document.querySelector('fas-offline')
   if (offlinePage) {
     offlinePage.style.display = 'none'
   }
-  const page = document.querySelector('example-app')
+  const page = document.querySelector('fas-app-shell')
   if (page) {
     page.style.display = 'block'
   }

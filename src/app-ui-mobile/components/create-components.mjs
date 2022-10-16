@@ -4,7 +4,7 @@ import { createNav } from './nav.mjs'
 
 export function createComponents (helpers) {
   const { createCustomElement } = helpers
-  createCustomElement('example-mobile-footer', createFooter(helpers))
-  createCustomElement('example-mobile-header', createHeader(helpers))
-  createCustomElement('example-mobile-nav', createNav(helpers))
+  createCustomElement('fas-mobile-footer', createFooter(helpers))
+  createCustomElement('fas-mobile-header', createHeader(helpers))
+  createCustomElement('fas-mobile-nav', createNav(helpers))
 }

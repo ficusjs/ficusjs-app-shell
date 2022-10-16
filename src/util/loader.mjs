@@ -7,10 +7,10 @@ export function loader () {
     configUrl: '/app-config.json',
 
     // set the app tag so the shell knows the root component
-    appTag: 'example-app',
+    appTag: 'fas-app-shell',
 
     // set the router outlet selector
-    rootOutletSelector: '#router-outlet',
+    routerOutletSelector: '#router-outlet',
 
     // add breakpoint configuration
     breakpointConfig: {
@@ -23,7 +23,10 @@ export function loader () {
         1440: { method: 'xxl' },
         1920: { method: 'xxxl' }
       }
-    }
+    },
+
+    // set the desktop media query
+    desktopMediaQuery: '(min-width: 1280px)'
   }
 
   // load the app shell

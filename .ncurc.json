@@ -1,3 +1,6 @@
 {
-  "reject": ["standard"]
+  "reject": [
+    "standard",
+    "pretty-mini-json"
+  ]
 }

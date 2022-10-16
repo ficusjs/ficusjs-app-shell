@@ -5,8 +5,8 @@ import { getAppState, getEventBus } from './util/shell-runtime.mjs'
 import { eventNames } from './util/event-names.mjs'
 
 function getRouterOutletSelector () {
-  return window.ficusAppShell && window.ficusAppShell.rootOutletSelector
-    ? window.ficusAppShell.rootOutletSelector
+  return window.ficusAppShell && window.ficusAppShell.routerOutletSelector
+    ? window.ficusAppShell.routerOutletSelector
     : '#router-outlet'
 }
 

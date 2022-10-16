@@ -1,19 +1,19 @@
 /* global HTMLElement */
-const appTagName = 'example-app'
-const desktopAppShellTagName = 'example-desktop-app-shell'
-const mobileAppShellTagName = 'example-mobile-app-shell'
+const appShellTagName = 'fas-app-shell'
+const desktopAppShellTagName = 'fas-desktop-app-shell'
+const mobileAppShellTagName = 'fas-mobile-app-shell'
 
-class ExampleApp extends HTMLElement {
+class FicusAppShell extends HTMLElement {
   connectedCallback () {
-    if (!this.classList.contains(appTagName)) {
-      this.classList.add(appTagName)
+    if (!this.classList.contains(appShellTagName)) {
+      this.classList.add(appShellTagName)
 
       // perform a media query on the screen width to determine whether to write out the mobile or desktop app shell component
-      const mql = window.matchMedia('(min-width: 1280px)')
+      const mql = window.matchMedia(getDesktopMediaQuery())
       const media = mql.matches ? 'desktop' : 'mobile'
 
       // append the app shell component
-      this.appendChild(elementFromString(`<example-${media}-app-shell></example-${media}-app-shell>`))
+      this.appendChild(elementFromString(`<fas-${media}-app-shell></fas-${media}-app-shell>`))
 
       // add a loader for the UI components
       const script = createScript(`/app-ui-${media}/main.mjs`, { type: 'module' })
@@ -22,22 +22,28 @@ class ExampleApp extends HTMLElement {
   }
 }
 
-class ExampleMobileAppShell extends HTMLElement {
+class FicusMobileAppShell extends HTMLElement {
   connectedCallback () {
     if (!this.classList.contains(mobileAppShellTagName)) {
       this.classList.add(mobileAppShellTagName)
-      this.appendChild(elementFromString('<div><example-mobile-header></example-mobile-header><example-mobile-nav></example-mobile-nav><main id="router-outlet"></main><example-mobile-footer></example-mobile-footer></div>'))
+      this.appendChild(elementFromString('<div><fas-mobile-header></fas-mobile-header><fas-mobile-nav></fas-mobile-nav><main id="router-outlet"></main><fas-mobile-footer></fas-mobile-footer></div>'))
     }
   }
 }
 
-class ExampleDesktopAppShell extends HTMLElement {
+class FicusDesktopAppShell extends HTMLElement {
   connectedCallback () {
     if (!this.classList.contains(desktopAppShellTagName)) {
       this.classList.add(desktopAppShellTagName)
-      this.appendChild(elementFromString('<div><example-desktop-header></example-desktop-header><example-desktop-nav></example-desktop-nav><main><div id="router-outlet"></div><example-desktop-aside></example-desktop-aside></main><example-desktop-footer></example-desktop-footer></div>'))
+      this.appendChild(elementFromString('<div><fas-desktop-header></fas-desktop-header><fas-desktop-nav></fas-desktop-nav><main><div id="router-outlet"></div><fas-desktop-aside></fas-desktop-aside></main><fas-desktop-footer></fas-desktop-footer></div>'))
     }
   }
+}
+
+function getDesktopMediaQuery () {
+  return window.ficusAppShell && window.ficusAppShell.desktopMediaQuery
+    ? window.ficusAppShell.desktopMediaQuery
+    : '(min-width: 1280px)'
 }
 
 function elementFromString (html) {
@@ -64,11 +70,11 @@ function setAttributes (element, attributes) {
 
 export function createAppComponent () {
   // register the root app component
-  window.customElements.get(appTagName) || window.customElements.define(appTagName, ExampleApp)
+  window.customElements.get(appShellTagName) || window.customElements.define(appShellTagName, FicusAppShell)
 
   // register the mobile shell component
-  window.customElements.get(mobileAppShellTagName) || window.customElements.define(mobileAppShellTagName, ExampleMobileAppShell)
+  window.customElements.get(mobileAppShellTagName) || window.customElements.define(mobileAppShellTagName, FicusMobileAppShell)
 
   // register the desktop shell component
-  window.customElements.get(desktopAppShellTagName) || window.customElements.define(desktopAppShellTagName, ExampleDesktopAppShell)
+  window.customElements.get(desktopAppShellTagName) || window.customElements.define(desktopAppShellTagName, FicusDesktopAppShell)
 }
