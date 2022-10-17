@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { eventNames } from './event-names.mjs'
+import { getAppTag } from './get-app-tag.mjs'
 
 function elementFromString (html) {
   const div = document.createElement('div')
@@ -10,7 +11,7 @@ function elementFromString (html) {
 export function handleError (getEvents) {
   const events = getEvents()
   events.subscribe(eventNames.FICUS_APP_SHELL_ERROR, e => {
-    const page = document.querySelector(window.ficusAppShellAppTag)
+    const page = document.querySelector(getAppTag())
     if (page) {
       page.style.display = 'none'
     }

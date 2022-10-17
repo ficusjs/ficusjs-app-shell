@@ -7,7 +7,7 @@ export function loader () {
     configUrl: '/app-config.json',
 
     // set the app tag so the shell knows the root component
-    appTag: 'fas-app-shell',
+    appTag: 'fas-app',
 
     // set the router outlet selector
     routerOutletSelector: '#router-outlet',

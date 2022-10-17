@@ -7,12 +7,11 @@
     <title>FicusJS App Shell</title>
     <link rel="apple-touch-icon" href="/assets/img/icon.png">
     <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
-    <meta name="description" content="FicusJS App Shell  App">
+    <meta name="description" content="FicusJS App Shell">
     <meta name="theme-color" content="#242424">
     <link rel="manifest" href="/app.webmanifest">
-    <style>
-      body { font-family: sans-serif; }
-    </style>
+    <!-- build:css inline ../tmp/style.css -->
+    <!-- /build -->
     <!-- build:js inline ../tmp/service-worker/main.mjs -->
     <!-- /build -->
     <!-- build:js inline ../tmp/main.mjs -->
@@ -20,6 +19,6 @@
     <!-- /build -->
   </head>
   <body>
-    <fas-app-shell></fas-app-shell>
+    <fas-app></fas-app>
   </body>
 </html>

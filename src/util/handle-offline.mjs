@@ -1,8 +1,9 @@
 // @ts-nocheck
 import { eventNames } from './event-names.mjs'
+import { getAppTag } from './get-app-tag.mjs'
 
 function showOffline () {
-  const page = document.querySelector(window.ficusAppShellAppTag)
+  const page = document.querySelector(getAppTag())
   if (page) {
     page.style.display = 'none'
   }
@@ -19,7 +20,7 @@ function showOnline () {
   if (offlinePage) {
     offlinePage.style.display = 'none'
   }
-  const page = document.querySelector('fas-app-shell')
+  const page = document.querySelector(getAppTag())
   if (page) {
     page.style.display = 'block'
   }

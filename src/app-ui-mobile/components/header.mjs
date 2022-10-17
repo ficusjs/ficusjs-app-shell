@@ -3,7 +3,9 @@ export function createHeader (helpers) {
   return {
     renderer,
     render () {
-      return html`<header>Mobile header</header>`
+      return html`<header>
+        <img src="/assets/img/logo.svg" alt="" style="height: 32px;">
+      </header>`
     }
   }
 }

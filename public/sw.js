@@ -4,7 +4,7 @@ const debug = true
 const offlineUrl = '/offline.html'
 
 // Files to cache
-const cacheName = 'example-1656338495796'
+const cacheName = 'fas-1656338495796'
 const contentToCache = [
   '/',
   '/index.html',

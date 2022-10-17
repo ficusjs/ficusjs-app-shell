@@ -1,5 +1,5 @@
 /* global HTMLElement */
-const appShellTagName = 'fas-app-shell'
+const appShellTagName = 'fas-app'
 const desktopAppShellTagName = 'fas-desktop-app-shell'
 const mobileAppShellTagName = 'fas-mobile-app-shell'
 

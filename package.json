@@ -7,6 +7,7 @@
   "scripts": {
     "build": "run-p build:*",
     "build:assets": "ncp public/assets build/assets/ && pmj public/app.webmanifest -o build/app.webmanifest && ncp public/sw.js build/sw.js && pmj public/app-config.json -o build/app-config.json",
+    "build:css": "tailwindcss -m -i ./src/style.css -o ./tmp/style.css",
     "build:bundles": "cross-env NODE_ENV=production node scripts/esbuild.build.mjs",
     "build:html": "run-p build:html:*",
     "build:html:index": "run-s html:index:app html:index:html html:index:min",
@@ -14,7 +15,7 @@
     "html:index:app": "node scripts/esbuild.build.mjs",
     "html:index:html": "htmlprocessor src/index.html -o tmp/index.html",
     "html:index:min": "html-minifier --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-tag-whitespace tmp/index.html -o build/index.html",
-    "dev": "vite",
+    "start": "vite",
     "gzip": "gzip-all \"build/**/*.{js,mjs,css,html,png,svg}\"",
     "prebuild": "rimraf tmp build && mkdirp build/assets tmp",
     "serve": "http-server build -g"
@@ -33,6 +34,7 @@
     "@ficusjs/renderers": "5.2.0",
     "@ficusjs/router": "3.2.0",
     "@ficusjs/state": "3.3.0",
+    "autoprefixer": "^10.4.12",
     "cross-env": "7.0.3",
     "esbuild": "0.15.11",
     "fs-extra": "10.1.0",
@@ -43,9 +45,11 @@
     "mkdirp": "1.0.4",
     "ncp": "2.0.0",
     "npm-run-all": "4.1.5",
+    "postcss": "^8.4.18",
     "pretty-mini-json": "^1.0.6",
     "rimraf": "3.0.2",
     "standard": "16.0.4",
+    "tailwindcss": "^3.1.8",
     "vite": "3.1.8"
   },
   "bugs": {
