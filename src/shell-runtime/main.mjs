@@ -12,7 +12,7 @@ const appConfigStore = getAppState(storeNames.APP_CONFIG)
 eventBus.subscribe('appConfigLoaded', startPath => {
   const moduleUrl = appConfigStore.getModuleUrlByLocation(startPath)
   moduleUrl
-    ? appConfigStore.loadModule(moduleUrl).then(() => router.start(startPath))
+    ? appConfigStore.loadModuleByModuleUrl(moduleUrl).then(() => router.start(startPath))
     : router.start(startPath)
 })
 if (window.ficusAppShell && window.ficusAppShell.configUrl) {

@@ -1,8 +1,8 @@
-import { getHomeRoute } from './home.mjs'
+import { getBasketRoute } from './basket.mjs'
 
 export function createRoutes (helpers) {
   const router = helpers.getRouter()
   router.addRoutes([
-    getHomeRoute(helpers)
+    getBasketRoute(helpers)
   ])
 }

@@ -1,14 +1,14 @@
-import { storeNames } from '../../shared/store-names.mjs'
+import { storeNames } from '../../shared/constants.mjs'
 
-export function createHomePage (helpers) {
+export function createCheckoutPage (helpers) {
   const { createCustomElement, html, renderer, getAppState, withStore } = helpers
   createCustomElement(
-    'module-one-home-page',
+    'checkout-page',
     withStore(getAppState(storeNames.LAYOUT), {
       renderer,
       computed: {
         pageTitle () {
-          return 'Module one'
+          return 'Checkout'
         }
       },
       mounted () {

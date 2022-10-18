@@ -10,14 +10,20 @@ function getRouterOutletSelector () {
     : '#router-outlet'
 }
 
+function getRouterMode () {
+  return window.ficusAppShell && window.ficusAppShell.routerMode
+    ? window.ficusAppShell.routerMode
+    : 'hash'
+}
+
 function getModuleUrlByLocation (pathname) {
   const appConfigStore = getAppState(storeNames.APP_CONFIG)
   return appConfigStore.getModuleUrlByLocation(pathname)
 }
 
-function loadModule (moduleUrl) {
+function loadModuleByModuleUrl (moduleUrl) {
   const appConfigStore = getAppState(storeNames.APP_CONFIG)
-  return appConfigStore.loadModule(moduleUrl)
+  return appConfigStore.loadModuleByModuleUrl(moduleUrl)
 }
 
 export const router = createRouter([], getRouterOutletSelector(), {
@@ -35,9 +41,10 @@ export const router = createRouter([], getRouterOutletSelector(), {
     if (!context.route) {
       const moduleUrl = getModuleUrlByLocation(context.location.pathname)
       return moduleUrl
-        ? loadModule(moduleUrl).then(() => {
-            console.log(context)
-            return {}
+        ? loadModuleByModuleUrl(moduleUrl).then(() => {
+            if (context.route && typeof context.route.action === 'function') {
+              return context.route.action(context, params)
+            }
           })
         : undefined
     }
@@ -45,13 +52,14 @@ export const router = createRouter([], getRouterOutletSelector(), {
   errorHandler (error, routeContext) {
     const moduleUrl = getModuleUrlByLocation(routeContext.location.pathname)
     if (moduleUrl) {
-      loadModule(moduleUrl).then(() => {
-        console.log(routeContext)
-        return {}
+      return loadModuleByModuleUrl(moduleUrl).then(() => {
+        if (routeContext.route && typeof routeContext.route.action === 'function') {
+          return routeContext.route.action(routeContext, routeContext.params)
+        }
       })
     } else {
       routeContext.context.eventBus.publish(eventNames.FICUS_APP_SHELL_ERROR, error)
     }
   },
-  mode: 'hash'
+  mode: getRouterMode()
 })

@@ -1,20 +1,80 @@
 {
-  "startPath": "/module-1",
+  "startPath": "/",
   "modules": [
     {
-      "id": "module-1",
-      "moduleUrl": "/modules/module-1/module.mjs",
-      "startPath": "/module-1",
+      "id": "home",
+      "moduleUrl": "/modules/home/module.mjs",
+      "startPath": "/",
       "routes": [
-        "/module-1"
-      ]
+        { "path": "/" }
+      ],
+      "layout": {
+        "desktop": {
+          "header": {
+            "home": "home-header-action"
+          },
+          "nav": {
+            "title": "Home",
+            "path": "/"
+          },
+          "aside": {
+            "home": "home-aside-action"
+          },
+          "footer": {
+            "home": "home-footer-action"
+          }
+        },
+        "mobile": {
+          "header": {
+            "home": "home-header-action"
+          },
+          "aside": {
+            "home": "home-aside-action"
+          },
+          "bar": {
+            "home": "home-footer-action"
+          }
+        }
+      }
     },
     {
-      "id": "module-2",
-      "moduleUrl": "/modules/module-2/module.mjs",
-      "startPath": "/module-2",
+      "id": "products",
+      "moduleUrl": "/modules/products/module.mjs",
+      "startPath": "/products",
       "routes": [
-        "/module-2"
+        { "path": "/products" }
+      ],
+      "layout": {
+        "desktop": {
+          "nav": {
+            "title": "Products",
+            "path": "/products"
+          }
+        }
+      }
+    },
+    {
+      "id": "basket",
+      "moduleUrl": "/modules/basket/module.mjs",
+      "startPath": "/basket",
+      "routes": [
+        { "path": "/basket" }
+      ],
+      "layout": {
+        "desktop": {
+          "nav": {
+            "title": "Basket",
+            "path": "/basket"
+          }
+        }
+      }
+    },
+    {
+      "id": "checkout",
+      "moduleUrl": "/modules/checkout/module.mjs",
+      "startPath": "/checkout",
+      "routes": [
+        { "path": "/checkout" }
       ]
     }
   ]

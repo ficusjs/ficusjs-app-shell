@@ -30,7 +30,7 @@ export function loader () {
   }
 
   // load the app shell
-  loadExternal(
+  return loadExternal(
     { url: '/shell-runtime/main.mjs', is: 'script', attributes: { type: 'module' } }
   )
 }

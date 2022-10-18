@@ -2,7 +2,7 @@
 import { createCustomElement } from '@ficusjs/core'
 import { getEventBus } from '@ficusjs/event-bus'
 import { getI18n, withI18n } from '@ficusjs/i18n'
-import { getRouter } from '@ficusjs/router'
+import { getRouter, addMatcherToRoute } from '@ficusjs/router'
 import {
   addXStateService,
   assign,
@@ -19,6 +19,7 @@ import {
 import { html, renderer } from '../util/renderer.mjs'
 
 export {
+  addMatcherToRoute,
   addXStateService,
   assign,
   createAppState,
