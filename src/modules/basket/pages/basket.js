@@ -19,6 +19,7 @@ export function createBasketPage (helpers) {
           return html`
             <section>
               <h1>${this.pageTitle}</h1>
+              <button type="button" class="btn-primary">Button</button>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et nisl eget lacus maximus tincidunt. Mauris at viverra neque. Aenean vulputate orci id convallis gravida.</p>
             </section>
           `
