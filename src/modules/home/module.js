@@ -1,7 +1,9 @@
 import { createRoutes } from './routes/create-routes.js'
+import { createMessages } from './messages/create-messages.js'
 
 export const module = {
-  create (helpers) {
+  async create (helpers) {
     createRoutes(helpers)
+    await createMessages(helpers)
   }
 }

@@ -6,13 +6,17 @@ import { eventBus } from './event-bus/index.js'
 import { storeNames } from './stores/constants.js'
 import { startPath } from './util/start-path.js'
 
-function loadDependencies () {
+function loadDependencies (hasModuleRoutes, hasModuleMessageBundles) {
+  const routerImport = hasModuleRoutes ? import('./router.js') : Promise.resolve()
+  const i18nImport = hasModuleMessageBundles ? import('./i18n.js') : Promise.resolve()
   return Promise.all([
-    import('./router.js'),
-    import('./i18n.js')
+    routerImport,
+    i18nImport
   ])
-    .then(([{ router }]) => {
-      eventBus.subscribe('appConfigLoaded', startPath => appConfigLoaded(router, startPath))
+    .then(([routerModule, i18nModule]) => {
+      if (routerModule) {
+        eventBus.subscribe('appConfigLoaded', startPath => appConfigLoaded(routerModule.router, startPath))
+      }
     })
 }
 
@@ -27,6 +31,6 @@ const appConfigStore = getAppState(storeNames.APP_CONFIG)
 
 if (window.ficusShellRuntime && window.ficusShellRuntime.configUrl) {
   appConfigStore.loadAppConfigIfNotLoaded(window.ficusShellRuntime.configUrl)
-    .then(loadDependencies)
+    .then(() => loadDependencies(appConfigStore.hasModuleRoutes(), appConfigStore.hasModuleMessageBundles()))
     .then(() => eventBus.publish('appConfigLoaded', startPath()))
 }

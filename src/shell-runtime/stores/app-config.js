@@ -35,6 +35,14 @@ helpers.createAppState(storeNames.APP_CONFIG, {
     const module = this.state.appConfig.data.modules.find(m => m.routes.find(r => r.matcher(url)))
     return module ? module.moduleUrl : undefined
   },
+  hasModuleRoutes () {
+    const modules = this.state.appConfig.data.modules.filter(m => m.routes && m.routes.length > 0)
+    return modules.length > 0
+  },
+  hasModuleMessageBundles () {
+    const modules = this.state.appConfig.data.modules.filter(m => m.messageBundleUrl)
+    return modules.length > 0
+  },
   loadConfigModules (appConfig) {
     return Promise.all(
       appConfig.modules.filter(m => m.preload).map(module => this.loadModuleByModuleUrl(module.moduleUrl))
