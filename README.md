@@ -4,7 +4,7 @@ FicusJS application shell for micro front-ends.
 
 ## Configuration
 
-The application shell is configured using `window.ficusAppShell` variables. The following variables are available:
+The application shell is configured using `window.ficusShellRuntime` variables. The following variables are available:
 
 | Variable               | Description                                                     | Default                                                                                                                                                                               |
 |------------------------|-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -18,7 +18,7 @@ To set the configuration, add the following to your `index.html`:
 
 ```html
 <script>
-  window.ficusAppShell = {
+  window.ficusShellRuntime = {
     // add app config URL
     configUrl: '/app-config.json',
 

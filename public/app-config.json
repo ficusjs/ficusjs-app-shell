@@ -3,7 +3,7 @@
   "modules": [
     {
       "id": "home",
-      "moduleUrl": "/modules/home/module.mjs",
+      "moduleUrl": "/modules/home/module.js",
       "startPath": "/",
       "routes": [
         { "path": "/" }
@@ -39,7 +39,7 @@
     },
     {
       "id": "products",
-      "moduleUrl": "/modules/products/module.mjs",
+      "moduleUrl": "/modules/products/module.js",
       "startPath": "/products",
       "routes": [
         { "path": "/products" }
@@ -55,7 +55,7 @@
     },
     {
       "id": "basket",
-      "moduleUrl": "/modules/basket/module.mjs",
+      "moduleUrl": "/modules/basket/module.js",
       "startPath": "/basket",
       "routes": [
         { "path": "/basket" }
@@ -71,7 +71,7 @@
     },
     {
       "id": "checkout",
-      "moduleUrl": "/modules/checkout/module.mjs",
+      "moduleUrl": "/modules/checkout/module.js",
       "startPath": "/checkout",
       "routes": [
         { "path": "/checkout" }

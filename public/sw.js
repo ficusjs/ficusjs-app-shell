@@ -13,9 +13,9 @@ const contentToCache = [
   '/assets/img/icon-192x192.png',
   '/assets/img/icon-512x512.png',
   '/assets/img/logo.svg',
-  '/app-ui-desktop/main.mjs',
-  '/app-ui-mobile/main.mjs',
-  '/shell-runtime/main.mjs',
+  '/app-ui-desktop/main.js',
+  '/app-ui-mobile/main.js',
+  '/shell-runtime/main.js',
   '/app.webmanifest'
 ]
 

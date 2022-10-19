@@ -1,22 +1,25 @@
 import esbuild from 'esbuild'
+import { dirname } from 'node:path'
 
 const bundles = [
   // app bundles
-  'app-ui-desktop/main.mjs',
-  'app-ui-mobile/main.mjs',
+  { entrypoint: 'app-ui-desktop/main.js', splitting: true },
+  { entrypoint: 'app-ui-mobile/main.js', splitting: true },
 
   // module bundles
-  'modules/module-1/module.mjs',
-  'modules/module-2/module.mjs',
+  { entrypoint: 'modules/basket/module.js', splitting: true },
+  { entrypoint: 'modules/checkout/module.js', splitting: true },
+  { entrypoint: 'modules/home/module.js', splitting: true },
+  { entrypoint: 'modules/products/module.js', splitting: true },
 
   // shell runtime
-  'shell-runtime/main.mjs',
+  { entrypoint: 'shell-runtime/main.js', splitting: true },
 
   // service worker
-  'service-worker/main.mjs',
+  { entrypoint: 'service-worker/main.js', splitting: false },
 
   // app shell
-  'main.mjs'
+  { entrypoint: 'main.js', splitting: false }
 ]
 
 const production = process.env.NODE_ENV === 'production'
@@ -29,13 +32,21 @@ const genericBuildOptions = {
   minify: true
 }
 
-const generateModuleBuild = lib => ({
-  entryPoints: [`src/${lib}`],
-  outfile: `${targetDir}/${lib}`,
-  format: 'esm',
-  footer: { js: `// FicusJS App Shell Example App ${lib} ES Module bundle | v${process.env.npm_package_version}` },
-  ...genericBuildOptions
-})
+const generateModuleBuild = lib => {
+  const build = {
+    entryPoints: [`src/${lib.entrypoint}`],
+    format: 'esm',
+    footer: { js: `// FicusJS App Shell Example App ${lib.entrypoint} ES Module bundle | v${process.env.npm_package_version}` },
+    ...genericBuildOptions
+  }
+  if (!lib.splitting) {
+    build.outfile = `${targetDir}/${lib.entrypoint}`
+  } else {
+    build.splitting = true
+    build.outdir = `${targetDir}/${dirname(lib.entrypoint)}`
+  }
+  return build
+}
 
 const builds = [
   ...bundles.map(generateModuleBuild)
