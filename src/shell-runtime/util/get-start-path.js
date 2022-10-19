@@ -1,7 +1,7 @@
 import { getAppState, getRouter } from '../util/shell-runtime.js'
 import { storeNames } from '../stores/constants.js'
 
-export function startPath () {
+export function getStartPath () {
   const appConfigStore = getAppState(storeNames.APP_CONFIG)
   if (appConfigStore.state.appConfig.loaded) {
     const router = getRouter()
