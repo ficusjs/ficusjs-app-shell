@@ -1,25 +1,23 @@
 import esbuild from 'esbuild'
 import { dirname } from 'node:path'
+import glob from 'glob-all'
 
 const bundles = [
-  // app bundles
-  { entrypoint: 'app-ui-desktop/main.js', splitting: true },
-  { entrypoint: 'app-ui-mobile/main.js', splitting: true },
-
-  // module bundles
-  { entrypoint: 'modules/basket/module.js', splitting: true },
-  { entrypoint: 'modules/checkout/module.js', splitting: true },
-  { entrypoint: 'modules/home/module.js', splitting: true },
-  { entrypoint: 'modules/products/module.js', splitting: true },
+  // app
+  { entrypoint: 'src/app-ui-desktop/main.js', splitting: true },
+  { entrypoint: 'src/app-ui-mobile/main.js', splitting: true },
 
   // shell runtime
-  { entrypoint: 'shell-runtime/main.js', splitting: true },
+  { entrypoint: 'src/shell-runtime/main.js', splitting: true },
 
   // service worker
-  { entrypoint: 'service-worker/main.js', splitting: false },
+  { entrypoint: 'src/service-worker/main.js', splitting: false },
 
   // app shell
-  { entrypoint: 'main.js', splitting: false }
+  { entrypoint: 'src/main.js', splitting: false },
+
+  // modules
+  ...glob.sync('src/modules/*/module.js').map(module => ({ entrypoint: module, splitting: true }))
 ]
 
 const production = process.env.NODE_ENV === 'production'
@@ -34,16 +32,17 @@ const genericBuildOptions = {
 
 const generateModuleBuild = lib => {
   const build = {
-    entryPoints: [`src/${lib.entrypoint}`],
+    entryPoints: [`${lib.entrypoint}`],
     format: 'esm',
     footer: { js: `// FicusJS App Shell Example App ${lib.entrypoint} ES Module bundle | v${process.env.npm_package_version}` },
     ...genericBuildOptions
   }
+  const outputEntrypoint = lib.entrypoint.replace('src/', '')
   if (!lib.splitting) {
-    build.outfile = `${targetDir}/${lib.entrypoint}`
+    build.outfile = `${targetDir}/${outputEntrypoint}`
   } else {
     build.splitting = true
-    build.outdir = `${targetDir}/${dirname(lib.entrypoint)}`
+    build.outdir = `${targetDir}/${dirname(outputEntrypoint)}`
   }
   return build
 }

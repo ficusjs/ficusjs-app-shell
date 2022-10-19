@@ -38,6 +38,7 @@
     "cross-env": "7.0.3",
     "esbuild": "0.15.11",
     "fs-extra": "10.1.0",
+    "glob-all": "3.3.0",
     "gzip-all": "1.0.0",
     "html-minifier": "4.0.0",
     "htmlprocessor": "0.3.2",
