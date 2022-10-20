@@ -31,6 +31,7 @@ export function loader (type) {
 
   // load the app shell
   return loadExternal(
-    { url: '/shell-runtime/main.js', is: 'script', attributes: { type: 'module' } }
+    { url: '/shell-runtime/main.js', is: 'script', attributes: { type: 'module' } },
+    { url: `/assets/css/${type}.css`, is: 'style' }
   )
 }

@@ -7,7 +7,9 @@
   "scripts": {
     "build": "run-p build:*",
     "build:assets": "ncp public/assets build/assets/ && pmj public/app.webmanifest -o build/app.webmanifest && ncp public/sw.js build/sw.js && pmj public/app-config.json -o build/app-config.json",
-    "build:css": "tailwindcss -m -i ./src/style.css -o ./tmp/style.css",
+    "build:css": "run-p build:css:*",
+    "build:css:desktop": "tailwindcss -m -i ./src/styles/desktop.css -o ./build/assets/css/desktop.css",
+    "build:css:mobile": "tailwindcss -m -i ./src/styles/mobile.css -o ./build/assets/css/mobile.css",
     "build:bundles": "cross-env NODE_ENV=production node scripts/esbuild.build.mjs",
     "build:html": "run-p build:html:*",
     "build:html:index": "run-s html:index:app html:index:html html:index:min",
@@ -15,7 +17,10 @@
     "html:index:app": "node scripts/esbuild.build.mjs",
     "html:index:html": "htmlprocessor src/index.html -o tmp/index.html",
     "html:index:min": "html-minifier --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-tag-whitespace tmp/index.html -o build/index.html",
-    "start": "vite",
+    "start": "run-p start:*",
+    "start:vite": "vite",
+    "start:desktop-styles": "tailwindcss -w -i ./src/styles/desktop.css -o ./public/assets/css/desktop.css",
+    "start:mobile-styles": "tailwindcss -w -i ./src/styles/mobile.css -o ./public/assets/css/mobile.css",
     "gzip": "gzip-all \"build/**/*.{js,mjs,css,html,png,svg}\"",
     "prebuild": "rimraf tmp build && mkdirp build/assets tmp",
     "serve": "http-server build -g"
