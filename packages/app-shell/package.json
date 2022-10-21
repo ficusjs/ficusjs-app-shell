@@ -1,0 +1,59 @@
+{
+  "name": "@ficusjs/app-shell",
+  "version": "0.1.0",
+  "description": "Ficus App Shell",
+  "type": "module",
+  "main": "src/main.mjs",
+  "module": "src/main.mjs",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production node scripts/esbuild.build.mjs",
+    "gzip": "gzip-all \"dist/**/*.{js,mjs,css,html,png,svg}\"",
+    "prebuild": "rimraf dist",
+    "publish": "",
+    "start": "vite",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ficusjs/ficusjs-app-shell.git"
+  },
+  "keywords": [
+    "ficusjs",
+    "frontend",
+    "web-components",
+    "app-shell"
+  ],
+  "author": "Matt Levy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ficusjs/ficusjs-app-shell/issues"
+  },
+  "standard": {
+    "ignore": [
+      "*.ts"
+    ]
+  },
+  "homepage": "https://github.com/ficusjs/ficusjs-app-shell#readme",
+  "devDependencies": {
+    "@ficusjs/core": "1.4.3",
+    "@ficusjs/event-bus": "1.2.2",
+    "@ficusjs/i18n": "1.0.2",
+    "@ficusjs/renderers": "5.3.0",
+    "@ficusjs/router": "3.3.1",
+    "@ficusjs/state": "3.3.1",
+    "autoprefixer": "10.4.12",
+    "cross-env": "7.0.3",
+    "esbuild": "0.15.11",
+    "fs-extra": "10.1.0",
+    "gzip-all": "1.0.0",
+    "npm-run-all": "4.1.5",
+    "rimraf": "3.0.2",
+    "vite": "3.1.8"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/main.mjs"
+    }
+  }
+}

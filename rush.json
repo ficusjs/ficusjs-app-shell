@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.81.0",
+  "pnpmVersion": "6.7.1",
+  "nodeSupportedVersionRange": ">=12.13.0 <13.0.0 || >=14.15.0 <15.0.0 || >=16.13.0 <17.0.0",
+  "projectFolderMaxDepth": 3,
+  "approvedPackagesPolicy": {
+    "reviewCategories": [
+      "production",
+      "tools",
+      "prototypes",
+      "examples"
+    ],
+    "ignoredNpmScopes": ["@types"]
+  },
+  "gitPolicy": {
+    "versionBumpCommitMessage": "Bump versions [skip ci]",
+    "changeLogUpdateCommitMessage": "Update changelogs [skip ci]",
+    "changefilesCommitMessage": "Rush change"
+  },
+  "repository": {
+    "url": "https://github.com/ficusjs/ficusjs-app-shell",
+    "defaultBranch": "main",
+    "defaultRemote": "origin"
+  },
+  "eventHooks": {
+    "preRushInstall": [],
+    "postRushInstall": [],
+    "preRushBuild": [],
+    "postRushBuild": []
+  },
+  "variants": [],
+  "projects": [
+    {
+      "packageName": "@ficusjs/app-shell",
+      "projectFolder": "packages/app-shell",
+      "reviewCategory": "production",
+      "shouldPublish": true,
+      "publishFolder": "tmp/publish"
+    },
+    {
+      "packageName": "@ficusjs/resource-loader",
+      "projectFolder": "packages/resource-loader",
+      "reviewCategory": "production",
+      "shouldPublish": true,
+      "publishFolder": "tmp/publish"
+    },
+    {
+      "packageName": "@app-shell-example/plant-store",
+      "projectFolder": "examples/apps/plant-store",
+      "reviewCategory": "examples",
+      "shouldPublish": false
+    }
+  ]
+}

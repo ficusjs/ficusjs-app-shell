@@ -1,0 +1,110 @@
+// DO NOT ADD COMMENTS IN THIS FILE.  They will be lost when the Rush tool resaves it.
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
+  "packages": [
+    {
+      "name": "@ficusjs/app-shell",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "@ficusjs/core",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@ficusjs/event-bus",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@ficusjs/i18n",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@ficusjs/renderers",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@ficusjs/resource-loader",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "@ficusjs/router",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@ficusjs/state",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "autoprefixer",
+      "allowedCategories": [ "examples", "production" ]
+    },
+    {
+      "name": "cross-env",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "esbuild",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "fs-extra",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "glob-all",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "gzip-all",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "html-minifier",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "htmlprocessor",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "ncp",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "npm-run-all",
+      "allowedCategories": [ "examples", "production" ]
+    },
+    {
+      "name": "postcss",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "postcss-import",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "pretty-mini-json",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "rimraf",
+      "allowedCategories": [ "examples", "production" ]
+    },
+    {
+      "name": "rollup",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "standard",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "tailwindcss",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "vite",
+      "allowedCategories": [ "examples", "production" ]
+    }
+  ]
+}

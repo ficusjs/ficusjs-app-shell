@@ -1,0 +1,42 @@
+{
+  "name": "@app-shell-example/plant-store",
+  "version": "0.1.0",
+  "description": "Plant store example built with the Ficus App Shell",
+  "type": "module",
+  "scripts": {
+    "build": "run-p build:*",
+    "build:app": "vite build",
+    "build:assets": "ncp public/assets build/assets/ && pmj public/app.webmanifest -o build/app.webmanifest && ncp public/sw.js build/sw.js && pmj public/app-config.json -o build/app-config.json",
+    "build:css": "run-p build:css:*",
+    "build:css:desktop": "tailwindcss -m -i ./src/styles/desktop.css -o ./build/assets/css/desktop.css",
+    "build:css:mobile": "tailwindcss -m -i ./src/styles/mobile.css -o ./build/assets/css/mobile.css",
+    "build:html": "run-p build:html:*",
+    "build:html:index": "run-s html:index:app html:index:html html:index:min",
+    "build:html:offline": "html-minifier --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-tag-whitespace public/offline.html -o build/offline.html",
+    "html:index:html": "htmlprocessor src/index.html -o tmp/index.html",
+    "html:index:min": "html-minifier --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-tag-whitespace tmp/index.html -o build/index.html",
+    "start": "run-p start:*",
+    "start:app": "vite",
+    "start:desktop-styles": "tailwindcss -w -i ./src/styles/desktop.css -o ./public/assets/css/desktop.css",
+    "start:mobile-styles": "tailwindcss -w -i ./src/styles/mobile.css -o ./public/assets/css/mobile.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@ficusjs/app-shell": "^0.1.0",
+    "@ficusjs/resource-loader": "^0.1.0",
+    "autoprefixer": "10.4.12",
+    "html-minifier": "4.0.0",
+    "htmlprocessor": "0.3.2",
+    "ncp": "2.0.0",
+    "npm-run-all": "4.1.5",
+    "postcss": "8.4.18",
+    "postcss-import": "15.0.0",
+    "pretty-mini-json": "1.0.6",
+    "rimraf": "3.0.2",
+    "standard": "16.0.4",
+    "tailwindcss": "3.1.8",
+    "vite": "3.1.8"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "/?source=pwa",
+  "short_name": "App",
+  "name": "App",
+  "icons": [
+    {
+      "src": "/assets/img/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/img/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#242424",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#242424",
+  "description": "FicusJS app"
+}

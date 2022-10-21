@@ -1,0 +1,19 @@
+name: Test and deploy to Surge
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploying to Surge
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set-up NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install -g surge
+      - run: npm install
+      - run: npm run build
+      - run: surge ./build ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
