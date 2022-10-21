@@ -1,12 +1,45 @@
 {
   "name": "@ficusjs/resource-loader",
   "version": "0.1.0",
-  "description": "",
+  "description": "Ficus resource loader",
   "type": "module",
+  "main": "src/main.mjs",
+  "module": "src/main.mjs",
+  "types": "types/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ficusjs/ficusjs-app-shell.git"
+  },
+  "keywords": [
+    "ficusjs",
+    "frontend",
+    "web-components",
+    "app-shell"
+  ],
+  "author": "Matt Levy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ficusjs/ficusjs-app-shell/issues"
+  },
+  "standard": {
+    "ignore": [
+      "*.ts"
+    ]
+  },
+  "homepage": "https://github.com/ficusjs/ficusjs-app-shell#readme",
+  "devDependencies": {
+    "@ficusjs/testing": "^2.1.0",
+    "ava": "4.3.3",
+    "cross-env": "7.0.3",
+    "esbuild": "0.15.12",
+    "standard": "16.0.4"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/main.mjs"
+    }
+  }
 }

@@ -1,9 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
-  "rushVersion": "5.81.0",
-  "pnpmVersion": "6.7.1",
+  "rushVersion": "5.82.1",
+  "npmVersion": "8.19.2",
   "nodeSupportedVersionRange": ">=12.13.0 <13.0.0 || >=14.15.0 <15.0.0 || >=16.13.0 <17.0.0",
-  "projectFolderMaxDepth": 3,
+  "projectFolderMaxDepth": 4,
   "approvedPackagesPolicy": {
     "reviewCategories": [
       "production",
@@ -46,8 +46,32 @@
       "publishFolder": "tmp/publish"
     },
     {
-      "packageName": "@app-shell-example/plant-store",
+      "packageName": "@example-app/plant-store",
       "projectFolder": "examples/apps/plant-store",
+      "reviewCategory": "examples",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@example-module/plant-store-basket",
+      "projectFolder": "examples/modules/plant-store/basket",
+      "reviewCategory": "examples",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@example-module/plant-store-checkout",
+      "projectFolder": "examples/modules/plant-store/checkout",
+      "reviewCategory": "examples",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@example-module/plant-store-home",
+      "projectFolder": "examples/modules/plant-store/home",
+      "reviewCategory": "examples",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@example-module/plant-store-products",
+      "projectFolder": "examples/modules/plant-store/products",
       "reviewCategory": "examples",
       "shouldPublish": false
     }

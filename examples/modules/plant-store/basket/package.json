@@ -1,0 +1,21 @@
+{
+  "name": "@example-module/plant-store-basket",
+  "version": "0.1.0",
+  "description": "Plant store basket module",
+  "type": "module",
+  "main": "src/main.mjs",
+  "module": "src/main.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Levy",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "16.0.4"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/main.mjs"
+    }
+  }
+}

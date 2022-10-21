@@ -86,15 +86,13 @@ function createPromise (dep) {
  * @param {...object|Array} items The resources to load
  * @returns {Promise} A pending promise
  * @example
- * loadExternal(
- *   { url: getComponentPath('/css/label.css'), is: 'style' },
- *   [
- *     { url: getComponentPath('/js/label.esm.js'), is: 'script', test: esmTest },
- *     { url: getComponentPath('/js/label.iife.js'), is: 'script' }
- *   ]
+ * loadResource(
+ *   { url: '/css/label.css', is: 'style' },
+ *   { url: '/js/label.iife.js', is: 'script', cache: false },
+ *   { url: '/js/label.esm.js', is: 'script', attributes: { type: 'module' } },
  * )
  */
-export function loadExternal (...items) {
+export function loadResource (...items) {
   window.__ficusjs__ = window.__ficusjs__ || {}
   window.__ficusjs__.resources = window.__ficusjs__.resources || {}
   if (!items.length) return Promise.resolve()

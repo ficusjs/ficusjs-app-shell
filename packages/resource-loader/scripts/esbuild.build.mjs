@@ -1,23 +1,8 @@
 import esbuild from 'esbuild'
 import { dirname } from 'node:path'
-import glob from 'glob-all'
 
 const bundles = [
-  // app
-  { entrypoint: 'src/app-ui-desktop/main.js', splitting: true },
-  { entrypoint: 'src/app-ui-mobile/main.js', splitting: true },
-
-  // shell runtime
-  { entrypoint: 'src/shell-runtime/main.js', splitting: true },
-
-  // service worker
-  { entrypoint: 'src/service-worker/main.js', splitting: false },
-
-  // app shell
-  { entrypoint: 'src/main.js', splitting: false },
-
-  // modules
-  ...glob.sync('src/modules/*/module.js').map(module => ({ entrypoint: module, splitting: true }))
+  { entrypoint: 'src/main.js', splitting: false }
 ]
 
 const production = process.env.NODE_ENV === 'production'
@@ -34,7 +19,7 @@ const generateModuleBuild = lib => {
   const build = {
     entryPoints: [`${lib.entrypoint}`],
     format: 'esm',
-    footer: { js: `// FicusJS App Shell Example App ${lib.entrypoint} ES Module bundle | v${process.env.npm_package_version}` },
+    footer: { js: `// FicusJS Resource loader ES Module bundle | v${process.env.npm_package_version}` },
     ...genericBuildOptions
   }
   const outputEntrypoint = lib.entrypoint.replace('src/', '')

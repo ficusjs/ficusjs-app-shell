@@ -35,8 +35,16 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "@ficusjs/testing",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "autoprefixer",
       "allowedCategories": [ "examples", "production" ]
+    },
+    {
+      "name": "ava",
+      "allowedCategories": [ "production" ]
     },
     {
       "name": "cross-env",
@@ -96,7 +104,7 @@
     },
     {
       "name": "standard",
-      "allowedCategories": [ "examples" ]
+      "allowedCategories": [ "examples", "production" ]
     },
     {
       "name": "tailwindcss",

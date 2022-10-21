@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { loadExternal } from './load-external.js'
+import { loadResource } from '@ficusjs/resource-loader'
 
 export function loader (type) {
   window.ficusShellRuntime = window.ficusShellRuntime || {
@@ -30,7 +30,7 @@ export function loader (type) {
   }
 
   // load the app shell
-  return loadExternal(
+  return loadResource(
     { url: '/shell-runtime/main.js', is: 'script', attributes: { type: 'module' } },
     { url: `/assets/css/${type}.css`, is: 'style' }
   )

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* global HTMLElement */
 const appShellTagName = 'fas-app'
 const desktopAppShellTagName = 'fas-desktop-app-shell'

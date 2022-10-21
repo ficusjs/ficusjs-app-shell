@@ -1,5 +1,5 @@
 {
-  "name": "@app-shell-example/plant-store",
+  "name": "@example-app/plant-store",
   "version": "0.1.0",
   "description": "Plant store example built with the Ficus App Shell",
   "type": "module",
@@ -20,9 +20,27 @@
     "start:desktop-styles": "tailwindcss -w -i ./src/styles/desktop.css -o ./public/assets/css/desktop.css",
     "start:mobile-styles": "tailwindcss -w -i ./src/styles/mobile.css -o ./public/assets/css/mobile.css"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ficusjs/ficusjs-app-shell.git"
+  },
+  "keywords": [
+    "ficusjs",
+    "frontend",
+    "web-components",
+    "app-shell"
+  ],
+  "author": "Matt Levy",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ficusjs/ficusjs-app-shell/issues"
+  },
+  "standard": {
+    "ignore": [
+      "*.ts"
+    ]
+  },
+  "homepage": "https://github.com/ficusjs/ficusjs-app-shell#readme",
   "devDependencies": {
     "@ficusjs/app-shell": "^0.1.0",
     "@ficusjs/resource-loader": "^0.1.0",
