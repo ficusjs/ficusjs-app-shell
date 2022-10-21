@@ -19,7 +19,7 @@ function createScript (url, attributes = null, cache = true) {
   return script
 }
 
-function createStyle (url, attributes = null, cache = true) {
+function createStyleLink (url, attributes = null, cache = true) {
   const style = document.createElement('link')
   style.setAttribute('rel', 'stylesheet')
   style.setAttribute('type', 'text/css')
@@ -51,27 +51,10 @@ function createPromise (dep) {
         script.onload = handleResponse
         document.body.appendChild(script)
       } else if (dep.is === 'style') {
-        const style = createStyle(dep.url, dep.attributes, dep.cache)
-        if (dep.fallback) {
-          const fallbackStyle = createStyle(dep.fallback, dep.attributes, dep.cache)
-          const handleDefaultResponse = (e) => {
-            if (e.error || (e.type && e.type === 'error')) {
-              document.getElementsByTagName('head')[0].appendChild(fallbackStyle)
-            } else {
-              window.__ficusjs__.resources[dep.url].hasLoaded = true
-              resolve()
-            }
-          }
-          style.onerror = handleDefaultResponse
-          style.onload = handleDefaultResponse
-          fallbackStyle.onerror = handleResponse
-          fallbackStyle.onload = handleResponse
-          document.getElementsByTagName('head')[0].appendChild(style)
-        } else {
-          style.onerror = handleResponse
-          style.onload = handleResponse
-          document.getElementsByTagName('head')[0].appendChild(style)
-        }
+        const style = createStyleLink(dep.url, dep.attributes, dep.cache)
+        style.onerror = handleResponse
+        style.onload = handleResponse
+        document.getElementsByTagName('head')[0].appendChild(style)
       }
     })
     window.__ficusjs__.resources[dep.url] = { type: dep.is, hasLoaded: false, promise }
