@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  nav,
+  nav ul {
+    @apply flex;
+  }
+  nav {
+   @apply justify-between;
+  }
+  nav ol,
+  nav ul {
+    @apply items-center list-none p-0 m-0
+  }
+  nav ol:first-of-type,
+  nav ul:first-of-type {
+    @apply -ml-3
+  }
+  nav ol:last-of-type,
+  nav ul:last-of-type {
+    @apply -mr-3
+  }
+  nav li {
+    @apply inline-block m-0 p-3;
+  }
+  nav :where(a, [role=link]) {
+    @apply inline-block -m-3 p-3 rounded-lg no-underline text-primary;
+  }
+  nav [role="button"] {
+    @apply p-3;
+    margin-right: inherit;
+    margin-left: inherit;
+  }
+}
