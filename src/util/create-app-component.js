@@ -35,7 +35,7 @@ class FicusDesktopAppShell extends HTMLElement {
   connectedCallback () {
     if (!this.classList.contains(desktopAppShellTagName)) {
       this.classList.add(desktopAppShellTagName)
-      this.appendChild(elementFromString('<div><fas-desktop-header></fas-desktop-header><fas-desktop-nav></fas-desktop-nav><main><div id="router-outlet"></div><fas-desktop-aside></fas-desktop-aside></main><fas-desktop-footer></fas-desktop-footer></div>'))
+      this.appendChild(elementFromString('<div><fas-desktop-header></fas-desktop-header><main><div id="router-outlet"></div><fas-desktop-aside></fas-desktop-aside></main><fas-desktop-footer></fas-desktop-footer></div>'))
     }
   }
 }

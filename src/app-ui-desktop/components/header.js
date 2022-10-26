@@ -15,18 +15,7 @@ export function createHeader (helpers) {
                   <img class="h-8 w-auto" src="/assets/img/logo.svg" alt="Ficus logo">
                 </a>
               </li>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Shop</a>
-              </li>
-              <li>
-                <a href="#">Gallery</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
+              <fas-desktop-nav></fas-desktop-nav>
             </ul>
 
             <!-- Account, search & basket-->
