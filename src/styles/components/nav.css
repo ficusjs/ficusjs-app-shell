@@ -16,14 +16,14 @@
   }
   nav ol:first-of-type,
   nav ul:first-of-type {
-    @apply -ml-3
+    @apply -ml-4
   }
   nav ol:last-of-type,
   nav ul:last-of-type {
-    @apply -mr-3
+    @apply -mr-4
   }
   nav li {
-    @apply inline-block m-0 p-3;
+    @apply inline-block m-0 py-3 px-4;
   }
   nav :where(a, [role=link]) {
     @apply flex items-center text-sm font-medium text-gray-700 hover:text-gray-800
