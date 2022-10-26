@@ -25,7 +25,7 @@
   nav li {
     @apply inline-block m-0 py-3 px-4;
   }
-  nav :where(a, [role=link]) {
+  nav :where(a, [role=link], button) {
     @apply flex items-center text-sm font-medium text-gray-700 hover:text-gray-800
   }
   nav [role="button"] {
