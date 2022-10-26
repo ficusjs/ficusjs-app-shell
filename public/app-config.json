@@ -76,6 +76,14 @@
       "routes": [
         { "path": "/checkout" }
       ]
+    },
+    {
+      "id": "prototype",
+      "moduleUrl": "/modules/prototype/module.js",
+      "startPath": "/prototype",
+      "routes": [
+        { "path": "/prototype" }
+      ]
     }
   ]
 }

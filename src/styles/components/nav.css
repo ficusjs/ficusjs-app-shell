@@ -26,7 +26,7 @@
     @apply inline-block m-0 p-3;
   }
   nav :where(a, [role=link]) {
-    @apply inline-block -m-3 p-3 rounded-lg no-underline text-primary;
+    @apply flex items-center text-sm font-medium text-gray-700 hover:text-gray-800
   }
   nav [role="button"] {
     @apply p-3;

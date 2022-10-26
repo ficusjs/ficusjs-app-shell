@@ -8,3 +8,9 @@
     --color-secondary: 111 114 185;
   }
 }
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+}

@@ -5,8 +5,8 @@ import { createNav } from './nav.js'
 
 export function createComponents (helpers) {
   const { createCustomElement } = helpers
-  createCustomElement('fas-desktop-aside', createAside(helpers))
-  createCustomElement('fas-desktop-footer', createFooter(helpers))
   createCustomElement('fas-desktop-header', createHeader(helpers))
-  createCustomElement('fas-desktop-nav', createNav(helpers))
+  // createCustomElement('fas-desktop-aside', createAside(helpers))
+  // createCustomElement('fas-desktop-footer', createFooter(helpers))
+  // createCustomElement('fas-desktop-nav', createNav(helpers))
 }
