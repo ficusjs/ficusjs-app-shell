@@ -16,7 +16,7 @@ import {
   withStore,
   withXStateService
 } from '@ficusjs/state'
-import { html, renderer } from '../util/renderer.mjs'
+import { html, renderer } from './renderer.mjs'
 
 export {
   addMatcherToRoute,

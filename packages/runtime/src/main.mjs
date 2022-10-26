@@ -1,6 +1,6 @@
 // @ts-nocheck
 import './stores/index.mjs'
-import { getAppState } from './util/shell-runtime.mjs'
+import { getAppState } from '@ficusjs/state/app-state'
 import { storeNames } from './stores/constants.mjs'
 import { getStartPath } from './util/get-start-path.mjs'
 
@@ -26,8 +26,7 @@ function appConfigLoaded () {
 }
 
 const appConfigStore = getAppState(storeNames.APP_CONFIG)
+const configUrl = (window.ficusShellRuntime && window.ficusShellRuntime.configUrl) || '/app-config.json'
 
-if (window.ficusShellRuntime && window.ficusShellRuntime.configUrl) {
-  appConfigStore.loadAppConfigIfNotLoaded(window.ficusShellRuntime.configUrl)
-    .then(appConfigLoaded)
-}
+appConfigStore.loadAppConfigIfNotLoaded(configUrl)
+  .then(appConfigLoaded)

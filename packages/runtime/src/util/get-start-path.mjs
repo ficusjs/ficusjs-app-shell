@@ -1,4 +1,4 @@
-import { getAppState, getRouter } from '../util/shell-runtime.mjs'
+import { getAppState, getRouter } from './shell-runtime.mjs'
 import { storeNames } from '../stores/constants.mjs'
 
 export function getStartPath () {

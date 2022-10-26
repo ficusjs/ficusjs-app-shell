@@ -32,8 +32,8 @@
   "variants": [],
   "projects": [
     {
-      "packageName": "@ficusjs/app-shell",
-      "projectFolder": "packages/app-shell",
+      "packageName": "@ficusjs/app-shell-runtime",
+      "projectFolder": "packages/runtime",
       "reviewCategory": "production",
       "shouldPublish": true,
       "publishFolder": "tmp/publish"
@@ -41,6 +41,13 @@
     {
       "packageName": "@ficusjs/resource-loader",
       "projectFolder": "packages/resource-loader",
+      "reviewCategory": "production",
+      "shouldPublish": true,
+      "publishFolder": "tmp/publish"
+    },
+    {
+      "packageName": "@ficusjs/app-shell-ui",
+      "projectFolder": "packages/ui",
       "reviewCategory": "production",
       "shouldPublish": true,
       "publishFolder": "tmp/publish"

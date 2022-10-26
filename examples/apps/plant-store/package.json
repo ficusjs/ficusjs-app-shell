@@ -42,7 +42,8 @@
   },
   "homepage": "https://github.com/ficusjs/ficusjs-app-shell#readme",
   "devDependencies": {
-    "@ficusjs/app-shell": "^0.1.0",
+    "@ficusjs/app-shell-runtime": "^0.1.0",
+    "@ficusjs/app-shell-ui": "^0.1.0",
     "@ficusjs/resource-loader": "^0.1.0",
     "autoprefixer": "10.4.12",
     "html-minifier": "4.0.0",

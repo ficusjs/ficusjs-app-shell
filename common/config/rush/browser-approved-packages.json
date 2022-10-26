@@ -7,6 +7,14 @@
       "allowedCategories": [ "examples" ]
     },
     {
+      "name": "@ficusjs/app-shell-runtime",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "@ficusjs/app-shell-ui",
+      "allowedCategories": [ "examples", "production" ]
+    },
+    {
       "name": "@ficusjs/core",
       "allowedCategories": [ "production" ]
     },
@@ -24,7 +32,7 @@
     },
     {
       "name": "@ficusjs/resource-loader",
-      "allowedCategories": [ "examples" ]
+      "allowedCategories": [ "examples", "production" ]
     },
     {
       "name": "@ficusjs/router",
@@ -36,6 +44,10 @@
     },
     {
       "name": "@ficusjs/testing",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@rollup/plugin-node-resolve",
       "allowedCategories": [ "production" ]
     },
     {
@@ -100,6 +112,18 @@
     },
     {
       "name": "rollup",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "rollup-plugin-filesize",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "rollup-plugin-minify-html-literals",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "rollup-plugin-terser",
       "allowedCategories": [ "production" ]
     },
     {
