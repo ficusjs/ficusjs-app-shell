@@ -6,7 +6,7 @@
   "main": "src/main.mjs",
   "module": "src/main.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "author": "Matt Levy",
   "license": "MIT",

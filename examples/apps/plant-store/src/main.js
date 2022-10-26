@@ -1,4 +1,6 @@
-import { createAppComponent } from './util/create-app-component.js'
+import { createAppShellComponents } from '@ficusjs/app-shell-ui'
 
 // create app components - mobile and desktop app shells
-createAppComponent()
+createAppShellComponents({
+  reactive: true
+})

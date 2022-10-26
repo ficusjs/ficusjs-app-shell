@@ -3,6 +3,22 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@example-module/plant-store-basket",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "@example-module/plant-store-checkout",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "@example-module/plant-store-home",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "@example-module/plant-store-products",
+      "allowedCategories": [ "examples" ]
+    },
+    {
       "name": "@ficusjs/app-shell",
       "allowedCategories": [ "examples" ]
     },

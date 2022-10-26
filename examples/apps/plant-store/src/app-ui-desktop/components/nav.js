@@ -1,8 +1,7 @@
-import { storeNames } from '../../modules/shared/constants.js'
-import { withStore } from '@ficusjs/state'
+import { storeNames } from '../../util/store-names.js'
 
 export function createNav (helpers) {
-  const { html, renderer, getAppState, getRouter } = helpers
+  const { html, renderer, getAppState, getRouter, withStore } = helpers
   return withStore(getAppState(storeNames.APP_CONFIG), {
     renderer,
     computed: {

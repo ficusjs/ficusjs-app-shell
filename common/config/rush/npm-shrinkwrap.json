@@ -499,7 +499,7 @@
     "node_modules/@rush-temp/plant-store": {
       "version": "0.0.0",
       "resolved": "file:projects/plant-store.tgz",
-      "integrity": "sha512-O/6w56GvBPh2LaOWtkmwS+6c+smd1ok+QOwEtrqOd/sdZwrR67UG1h5ZPfHCZB9kY1xBEKW6XY+CjoZ7ng3EhA==",
+      "integrity": "sha512-GO2T2Nh9zRyR5ecFMVmz/FKKmyFXY65JhaDC+afTkv6MBGkQtE6di4gp0l8Y7LQBUQXAbzcHfiNnrtQzPLiatw==",
       "dependencies": {
         "autoprefixer": "10.4.12",
         "html-minifier": "4.0.0",
@@ -601,9 +601,9 @@
       "integrity": "sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ=="
     },
     "node_modules/@types/node": {
-      "version": "18.11.5",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-18.11.5.tgz",
-      "integrity": "sha512-3JRwhbjI+cHLAkUorhf8RnqUbFXajvzX4q6fMn5JwkgtuwfYtRQYI3u4V92vI6NJuTsbBQWWh3RZjFsuevyMGQ=="
+      "version": "18.11.6",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-18.11.6.tgz",
+      "integrity": "sha512-j3CEDa2vd96K0AXF8Wur7UucACvnjkk8hYyQAHhUNciabZLDl9nfAEVUSwmh245OOZV15bRA3Y590Gi5jUcDJg=="
     },
     "node_modules/@types/relateurl": {
       "version": "0.2.29",
@@ -8416,7 +8416,7 @@
     },
     "@rush-temp/plant-store": {
       "version": "file:projects/plant-store.tgz",
-      "integrity": "sha512-O/6w56GvBPh2LaOWtkmwS+6c+smd1ok+QOwEtrqOd/sdZwrR67UG1h5ZPfHCZB9kY1xBEKW6XY+CjoZ7ng3EhA==",
+      "integrity": "sha512-GO2T2Nh9zRyR5ecFMVmz/FKKmyFXY65JhaDC+afTkv6MBGkQtE6di4gp0l8Y7LQBUQXAbzcHfiNnrtQzPLiatw==",
       "requires": {
         "autoprefixer": "10.4.12",
         "html-minifier": "4.0.0",
@@ -8510,9 +8510,9 @@
       "integrity": "sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ=="
     },
     "@types/node": {
-      "version": "18.11.5",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-18.11.5.tgz",
-      "integrity": "sha512-3JRwhbjI+cHLAkUorhf8RnqUbFXajvzX4q6fMn5JwkgtuwfYtRQYI3u4V92vI6NJuTsbBQWWh3RZjFsuevyMGQ=="
+      "version": "18.11.6",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-18.11.6.tgz",
+      "integrity": "sha512-j3CEDa2vd96K0AXF8Wur7UucACvnjkk8hYyQAHhUNciabZLDl9nfAEVUSwmh245OOZV15bRA3Y590Gi5jUcDJg=="
     },
     "@types/relateurl": {
       "version": "0.2.29",

@@ -1,0 +1,16 @@
+{
+  "id": "products",
+  "moduleUrl": "/modules/products/module.js",
+  "startPath": "/products",
+  "routes": [
+    { "path": "/products" }
+  ],
+  "layout": {
+    "desktop": {
+      "nav": {
+        "title": "Products",
+        "path": "/products"
+      }
+    }
+  }
+}

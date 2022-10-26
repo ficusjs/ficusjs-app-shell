@@ -17,4 +17,4 @@ export interface AppShellOptions {
   mobileUiScriptUrl: '/app-ui-mobile/main.mjs'
 }
 
-export declare function createAppShellComponents (options: AppShellOptions)
+export declare function createAppShellComponents (options?: Partial<AppShellOptions>)

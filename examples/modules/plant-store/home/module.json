@@ -1,0 +1,36 @@
+{
+  "id": "home",
+  "moduleUrl": "/modules/home/module.js",
+  "startPath": "/",
+  "routes": [
+    { "path": "/" }
+  ],
+  "layout": {
+    "desktop": {
+      "header": {
+        "home": "home-header-action"
+      },
+      "nav": {
+        "title": "Home",
+        "path": "/"
+      },
+      "aside": {
+        "home": "home-aside-action"
+      },
+      "footer": {
+        "home": "home-footer-action"
+      }
+    },
+    "mobile": {
+      "header": {
+        "home": "home-header-action"
+      },
+      "aside": {
+        "home": "home-aside-action"
+      },
+      "bar": {
+        "home": "home-footer-action"
+      }
+    }
+  }
+}

@@ -5,14 +5,14 @@ import { getAppState, getEventBus } from './util/shell-runtime.mjs'
 import { eventNames } from './util/event-names.mjs'
 
 function getRouterOutletSelector () {
-  return window.ficusShellRuntime && window.ficusShellRuntime.routerOutletSelector
-    ? window.ficusShellRuntime.routerOutletSelector
+  return window._ficusAppShellRuntime_ && window._ficusAppShellRuntime_.routerOutletSelector
+    ? window._ficusAppShellRuntime_.routerOutletSelector
     : '#router-outlet'
 }
 
 function getRouterMode () {
-  return window.ficusShellRuntime && window.ficusShellRuntime.routerMode
-    ? window.ficusShellRuntime.routerMode
+  return window._ficusAppShellRuntime_ && window._ficusAppShellRuntime_.routerMode
+    ? window._ficusAppShellRuntime_.routerMode
     : 'hash'
 }
 

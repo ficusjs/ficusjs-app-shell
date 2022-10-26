@@ -1,0 +1,16 @@
+{
+  "id": "basket",
+  "moduleUrl": "/modules/basket/module.js",
+  "startPath": "/basket",
+  "routes": [
+    { "path": "/basket" }
+  ],
+  "layout": {
+    "desktop": {
+      "nav": {
+        "title": "Basket",
+        "path": "/basket"
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
+import { createRoutes } from './routes/create-routes.mjs'
+
 export const module = {
-    create (helpers) {
-        
-    }
+  create (helpers) {
+    createRoutes(helpers)
+  }
 }

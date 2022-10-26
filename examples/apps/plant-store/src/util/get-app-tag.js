@@ -1,6 +1,6 @@
 // @ts-nocheck
 export function getAppTag () {
-  return window.ficusShellRuntime && window.ficusShellRuntime.appTag
-    ? window.ficusShellRuntime.appTag
+  return window.ficusAppShellRuntime && window.ficusAppShellRuntime.appTag
+    ? window.ficusAppShellRuntime.appTag
     : 'fas-app'
 }

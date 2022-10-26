@@ -1,0 +1,8 @@
+{
+  "id": "checkout",
+  "moduleUrl": "/modules/checkout/module.js",
+  "startPath": "/checkout",
+  "routes": [
+    { "path": "/checkout" }
+  ]
+}

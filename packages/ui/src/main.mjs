@@ -2,10 +2,6 @@
 /* global HTMLElement */
 import { loadResource } from '@ficusjs/resource-loader'
 
-function html (strings) {
-  return elementFromString(strings.raw[0])
-}
-
 function elementFromString (html) {
   const div = document.createElement('div')
   div.innerHTML = html.trim()
@@ -40,12 +36,7 @@ function createComponents (config) {
     connectedCallback () {
       if (!this.classList.contains(config.mobileUiTagName)) {
         this.classList.add(config.mobileUiTagName)
-        this.appendChild(html`<div>
-          <fas-mobile-header></fas-mobile-header>
-          <fas-mobile-nav></fas-mobile-nav>
-          <main id="router-outlet"></main>
-          <fas-mobile-footer></fas-mobile-footer>
-        </div>`)
+        this.appendChild(elementFromString(config.mobileHTML))
       }
     }
   }
@@ -54,15 +45,7 @@ function createComponents (config) {
     connectedCallback () {
       if (!this.classList.contains(config.desktopUiTagName)) {
         this.classList.add(config.desktopUiTagName)
-        this.appendChild(html`<div>
-          <fas-desktop-header></fas-desktop-header>
-          <fas-desktop-nav></fas-desktop-nav>
-          <main>
-            <div id="router-outlet"></div>
-            <fas-desktop-aside></fas-desktop-aside>
-          </main>
-          <fas-desktop-footer></fas-desktop-footer>
-        </div>`)
+        this.appendChild(elementFromString(config.desktopHTML))
       }
     }
   }
@@ -90,11 +73,26 @@ export function createAppShellComponents (options) {
 
     // desktop shell ui components
     desktopUiTagName: 'fas-ui-desktop',
-    desktopUiScriptUrl: '/app-ui-desktop/main.mjs',
+    desktopUiScriptUrl: '/app-ui-desktop/main.js',
+    desktopHTML: `<div>
+      <fas-desktop-header></fas-desktop-header>
+      <fas-desktop-nav></fas-desktop-nav>
+      <main>
+        <div id="router-outlet"></div>
+        <fas-desktop-aside></fas-desktop-aside>
+      </main>
+      <fas-desktop-footer></fas-desktop-footer>
+    </div>`,
 
     // mobile shell ui components
     mobileUiTagName: 'fas-ui-mobile',
-    mobileUiScriptUrl: '/app-ui-mobile/main.mjs'
+    mobileUiScriptUrl: '/app-ui-mobile/main.js',
+    mobileHTML: `<div>
+      <fas-mobile-header></fas-mobile-header>
+      <fas-mobile-nav></fas-mobile-nav>
+      <main id="router-outlet"></main>
+      <fas-mobile-footer></fas-mobile-footer>
+    </div>`
   }
   const config = { ...defaultConfig, ...options }
   createComponents(config)
