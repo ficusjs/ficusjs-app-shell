@@ -31,6 +31,10 @@
       "allowedCategories": [ "examples", "production" ]
     },
     {
+      "name": "@ficusjs/app-shell-ui-loader",
+      "allowedCategories": [ "examples" ]
+    },
+    {
       "name": "@ficusjs/core",
       "allowedCategories": [ "production" ]
     },
@@ -76,11 +80,11 @@
     },
     {
       "name": "cross-env",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "examples", "production" ]
     },
     {
       "name": "esbuild",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "examples", "production" ]
     },
     {
       "name": "fs-extra",
@@ -88,7 +92,7 @@
     },
     {
       "name": "glob-all",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "examples", "production" ]
     },
     {
       "name": "gzip-all",
@@ -100,6 +104,10 @@
     },
     {
       "name": "htmlprocessor",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "mkdirp",
       "allowedCategories": [ "examples" ]
     },
     {

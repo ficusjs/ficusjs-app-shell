@@ -1,4 +1,4 @@
-export interface AppShellOptions {
+export interface LoaderOptions {
   // root app tag
   appTagName: 'fas-app',
 
@@ -6,15 +6,15 @@ export interface AppShellOptions {
   desktopMediaQuery: '(min-width: 1280px)',
 
   // should the breakpoint be reactive on resize?
-  reactive: false,
+  breakpointReactive: false,
 
   // desktop shell ui components
   desktopUiTagName: 'fas-ui-desktop',
-  desktopUiScriptUrl: '/app-ui-desktop/main.mjs',
+  desktopUiScriptUrl: '/app-ui-desktop/main.js',
 
   // mobile shell ui components
   mobileUiTagName: 'fas-ui-mobile',
-  mobileUiScriptUrl: '/app-ui-mobile/main.mjs'
+  mobileUiScriptUrl: '/app-ui-mobile/main.js'
 }
 
-export declare function createAppShellComponents (options?: Partial<AppShellOptions>)
+export declare function createLoader (options?: Partial<LoaderOptions>)

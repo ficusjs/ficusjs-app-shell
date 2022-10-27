@@ -1,5 +1,5 @@
 {
-  "name": "@ficusjs/app-shell-ui",
+  "name": "@ficusjs/app-shell-ui-loader",
   "version": "0.1.0",
   "description": "UI components for the FicusJS App Shell",
   "type": "module",

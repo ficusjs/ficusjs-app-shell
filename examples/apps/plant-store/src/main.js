@@ -1,6 +1,6 @@
-import { createAppShellComponents } from '@ficusjs/app-shell-ui'
+import { createLoader } from '@ficusjs/app-shell-ui-loader'
 
-// create app components - mobile and desktop app shells
-createAppShellComponents({
-  reactive: true
+// create UI loader
+createLoader({
+  breakpointReactive: true
 })

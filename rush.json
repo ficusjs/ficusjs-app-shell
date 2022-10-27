@@ -46,8 +46,8 @@
       "publishFolder": "tmp/publish"
     },
     {
-      "packageName": "@ficusjs/app-shell-ui",
-      "projectFolder": "packages/ui",
+      "packageName": "@ficusjs/app-shell-ui-loader",
+      "projectFolder": "packages/ui-loader",
       "reviewCategory": "production",
       "shouldPublish": true,
       "publishFolder": "tmp/publish"

@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="/">
   <title>Plant Store App Example</title>
+  <link rel="apple-touch-icon" href="/assets/img/icon.png">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <meta name="description" content="FicusJS App Shell">
+  <meta name="theme-color" content="#242424">
+  <link rel="manifest" href="/app.webmanifest">
+  <!-- build:js inline ../tmp/service-worker/main.js -->
+  <!-- /build -->
+  <!-- build:js inline ../tmp/main.js -->
+  <script type="module" src="/main.js"></script>
+  <!-- /build -->
 </head>
 <body>
   <fas-app></fas-app>
-  <script type="module" src="/main.js"></script>
 </body>
 </html>

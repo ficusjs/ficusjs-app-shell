@@ -2,8 +2,9 @@
 import { createCustomElement } from '@ficusjs/core'
 import { getEventBus } from '@ficusjs/event-bus'
 import { getI18n, withI18n } from '@ficusjs/i18n'
-import { getRouter, addMatcherToRoute } from '@ficusjs/router'
+import { getRouter } from '@ficusjs/router'
 import {
+  XStateServiceStatus,
   addXStateService,
   assign,
   createAppState,
@@ -12,14 +13,17 @@ import {
   createXStateService,
   getAppState,
   getXStateService,
+  interpret,
   withLocalState,
   withStore,
-  withXStateService
+  withWorkerStore,
+  withXStateService,
+  wrapXStateService
 } from '@ficusjs/state'
 import { html, renderer } from './renderer.mjs'
 
 export {
-  addMatcherToRoute,
+  XStateServiceStatus,
   addXStateService,
   assign,
   createAppState,
@@ -33,9 +37,12 @@ export {
   getRouter,
   getXStateService,
   html,
+  interpret,
   renderer,
   withI18n,
   withLocalState,
   withStore,
-  withXStateService
+  withWorkerStore,
+  withXStateService,
+  wrapXStateService
 }

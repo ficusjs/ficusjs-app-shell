@@ -16,19 +16,41 @@ function createComponents (config) {
 
         // perform a media query on the screen width to determine whether to write out the mobile or desktop app shell component
         const mql = window.matchMedia(config.desktopMediaQuery)
-        let tagName = config.mobileUiTagName
-        let scriptUrl = config.mobileUiScriptUrl
         if (mql.matches) {
-          tagName = config.desktopUiTagName
-          scriptUrl = config.desktopUiScriptUrl
+          this._loadDesktopUi()
+        } else {
+          this._loadMobileUi()
         }
-
-        // append the app shell component
-        this.appendChild(elementFromString(`<${tagName}></${tagName}>`))
-
-        // append the script to load the app shell UI components
-        loadResource({ url: scriptUrl, is: 'script', attributes: { type: 'module' } })
+        
+        if (config.breakpointReactive) {
+          mql.addEventListener('change', this._listener.bind(this))
+        }
       }
+    }
+    
+    _listener (e) {
+      if (e.matches) {
+        this._loadDesktopUi()
+      } else {
+        this._loadMobileUi()
+      }
+    }
+
+    _loadDesktopUi () {
+      this._performLoad(config.desktopUiTagName, config.desktopUiScriptUrl)
+    }
+
+    _loadMobileUi () {
+      this._performLoad(config.mobileUiTagName, config.mobileUiScriptUrl)
+    }
+    
+    _performLoad (tagName, scriptUrl) {
+      if (this.children.length === 1) {
+        this.removeChild(this.children[0])
+      }
+      this.appendChild(elementFromString(`<${tagName}></${tagName}>`))
+      loadResource({ url: scriptUrl, is: 'script', attributes: { type: 'module' } })
+        .catch(e => console.error(e))
     }
   }
 
@@ -60,7 +82,7 @@ function createComponents (config) {
   window.customElements.get(config.desktopUiTagName) || window.customElements.define(config.desktopUiTagName, FicusDesktopAppShell)
 }
 
-export function createAppShellComponents (options) {
+export function createLoader (options) {
   const defaultConfig = {
     // root app tag
     appTagName: 'fas-app',
@@ -69,7 +91,7 @@ export function createAppShellComponents (options) {
     desktopMediaQuery: '(min-width: 1280px)',
 
     // should the breakpoint be reactive on resize?
-    reactive: false,
+    breakpointReactive: false,
 
     // desktop shell ui components
     desktopUiTagName: 'fas-ui-desktop',

@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { addMatcherToRoute } from './shell-runtime.mjs'
+import { addMatcherToRoute } from '@ficusjs/router'
 
 export function mapRoutesForModules (data) {
   if (!data || !data.modules) return data

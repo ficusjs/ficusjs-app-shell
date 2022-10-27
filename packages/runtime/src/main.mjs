@@ -1,9 +1,10 @@
 // @ts-nocheck
 import './stores/index.mjs'
+import './i18n.mjs'
 import { storeNames } from './stores/constants.mjs'
 import { getStartPath } from './util/get-start-path.mjs'
+import { router } from './router.mjs'
 import {
-  addMatcherToRoute,
   addXStateService,
   assign,
   createAppState,
@@ -23,28 +24,6 @@ import {
   withStore,
   withXStateService,
 } from './util/shell-runtime.mjs'
-
-function appConfigLoaded () {
-  const appConfigStore = getAppState(storeNames.APP_CONFIG)
-  const hasModuleRoutes = appConfigStore.hasModuleRoutes()
-  const hasModuleMessageBundles = appConfigStore.hasModuleMessageBundles()
-  const routerImport = hasModuleRoutes ? import('./router.mjs') : Promise.resolve()
-  const i18nImport = hasModuleMessageBundles ? import('./i18n.mjs') : Promise.resolve()
-  return Promise.all([
-    routerImport,
-    i18nImport
-  ])
-    .then(([routerModule, _i18nModule]) => {
-      if (routerModule) {
-        const router = routerModule.router
-        const startPath = getStartPath()
-        const moduleUrl = appConfigStore.getModuleUrlByLocation(startPath)
-        moduleUrl
-          ? appConfigStore.loadModuleByModuleUrl(moduleUrl).then(() => router.start(startPath))
-          : router.start(startPath)
-      }
-    })
-}
 
 function start (options) {
   const defaultConfig = {
@@ -68,7 +47,13 @@ function start (options) {
   window._ficusAppShellRuntime_ = window._ficusAppShellRuntime_ || runtimeConfig
   const appConfigStore = getAppState(storeNames.APP_CONFIG)
   appConfigStore.loadAppConfigIfNotLoaded(runtimeConfig.configUrl)
-    .then(appConfigLoaded)
+    .then(() => {
+      const startPath = getStartPath()
+      const moduleUrl = appConfigStore.getModuleUrlByLocation(startPath)
+      moduleUrl
+        ? appConfigStore.loadModuleByModuleUrl(moduleUrl).then(() => router.start(startPath))
+        : router.start(startPath)
+    })
 }
 
 export {
