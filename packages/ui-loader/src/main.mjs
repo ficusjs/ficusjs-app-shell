@@ -98,7 +98,6 @@ export function createLoader (options) {
     desktopUiScriptUrl: '/app-ui-desktop/main.js',
     desktopHTML: `<div>
       <fas-desktop-header></fas-desktop-header>
-      <fas-desktop-nav></fas-desktop-nav>
       <main>
         <div id="router-outlet"></div>
         <fas-desktop-aside></fas-desktop-aside>

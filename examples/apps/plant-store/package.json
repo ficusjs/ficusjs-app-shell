@@ -51,6 +51,8 @@
     "@ficusjs/app-shell-runtime": "^0.1.0",
     "@ficusjs/app-shell-ui-loader": "^0.1.0",
     "@ficusjs/resource-loader": "^0.1.0",
+    "@tailwindcss/aspect-ratio": "0.4.2",
+    "@tailwindcss/forms": "0.5.3",
     "autoprefixer": "10.4.12",
     "cross-env": "7.0.3",
     "esbuild": "0.15.11",

@@ -71,6 +71,14 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "@tailwindcss/aspect-ratio",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "@tailwindcss/forms",
+      "allowedCategories": [ "examples" ]
+    },
+    {
       "name": "autoprefixer",
       "allowedCategories": [ "examples", "production" ]
     },

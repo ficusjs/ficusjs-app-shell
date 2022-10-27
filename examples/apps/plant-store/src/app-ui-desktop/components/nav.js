@@ -18,11 +18,9 @@ export function createNav (helpers) {
       }
     },
     render () {
-      return html`<nav>
-        <ul>
-          ${this.items.map(item => html`<li><button type="button" onclick="${e => this.handleClick(e, item)}">${item.title}</button></li>`)}
-        </ul>
-      </nav>`
+      return html`
+        ${this.items.map(item => html`<li><button class="fc-nav-link" type="button" onclick="${e => this.handleClick(e, item)}">${item.title}</button></li>`)}
+      `
     }
   })
 }

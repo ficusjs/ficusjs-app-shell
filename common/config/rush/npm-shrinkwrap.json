@@ -24,6 +24,8 @@
         "@rush-temp/plant-store-home": "file:./projects/plant-store-home.tgz",
         "@rush-temp/plant-store-products": "file:./projects/plant-store-products.tgz",
         "@rush-temp/resource-loader": "file:./projects/resource-loader.tgz",
+        "@tailwindcss/aspect-ratio": "0.4.2",
+        "@tailwindcss/forms": "0.5.3",
         "autoprefixer": "10.4.12",
         "ava": "4.3.3",
         "cross-env": "7.0.3",
@@ -555,6 +557,25 @@
         "rollup-plugin-minify-html-literals": "1.2.6",
         "rollup-plugin-terser": "7.0.2",
         "standard": "16.0.4"
+      }
+    },
+    "node_modules/@tailwindcss/aspect-ratio": {
+      "version": "0.4.2",
+      "resolved": "https://registry.npmjs.org/@tailwindcss/aspect-ratio/-/aspect-ratio-0.4.2.tgz",
+      "integrity": "sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==",
+      "peerDependencies": {
+        "tailwindcss": ">=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1"
+      }
+    },
+    "node_modules/@tailwindcss/forms": {
+      "version": "0.5.3",
+      "resolved": "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.3.tgz",
+      "integrity": "sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==",
+      "dependencies": {
+        "mini-svg-data-uri": "^1.2.3"
+      },
+      "peerDependencies": {
+        "tailwindcss": ">=3.0.0 || >= 3.0.0-alpha.1"
       }
     },
     "node_modules/@tootallnate/once": {
@@ -4922,6 +4943,14 @@
         "url": "https://github.com/sponsors/sindresorhus"
       }
     },
+    "node_modules/mini-svg-data-uri": {
+      "version": "1.4.4",
+      "resolved": "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz",
+      "integrity": "sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==",
+      "bin": {
+        "mini-svg-data-uri": "cli.js"
+      }
+    },
     "node_modules/minify-html-literals": {
       "version": "1.3.5",
       "resolved": "https://registry.npmjs.org/minify-html-literals/-/minify-html-literals-1.3.5.tgz",
@@ -8602,7 +8631,7 @@
       }
     },
     "@rush-temp/app-shell-runtime": {
-      "version": "file:projects/app-shell-runtime.tgz",
+      "version": "file:projects\\app-shell-runtime.tgz",
       "integrity": "sha512-4etiI0Kzs28I/fnLewesSNtJbHTF6KV6xMweyTqTjGOM8kMsjN7kb9SgJv0cO9nIYQKpRgt2iL7un63h1hhQ2w==",
       "requires": {
         "@ficusjs/core": "2.1.0",
@@ -8621,7 +8650,7 @@
       }
     },
     "@rush-temp/app-shell-ui-loader": {
-      "version": "file:projects/app-shell-ui-loader.tgz",
+      "version": "file:projects\\app-shell-ui-loader.tgz",
       "integrity": "sha512-9G4IZpx2VrA9OPif9G9mj/mtY/djL/hs0W6se4TXA39Kg3rAfV4p7atoD6Efdt1i5d6Qx/xeLtNz//ZZJSk31A==",
       "requires": {
         "@rollup/plugin-node-resolve": "15.0.1",
@@ -8635,7 +8664,7 @@
       }
     },
     "@rush-temp/plant-store": {
-      "version": "file:projects/plant-store.tgz",
+      "version": "file:projects\\plant-store.tgz",
       "integrity": "sha512-InaX/dushhDah6C5//UXbZ/VSwE4NdLu2XF3H/Efofk2sxwLUv43DYG5jn0jhTdtKdFUPqPvmZjLENhGJ0tESA==",
       "requires": {
         "autoprefixer": "10.4.12",
@@ -8657,35 +8686,35 @@
       }
     },
     "@rush-temp/plant-store-basket": {
-      "version": "file:projects/plant-store-basket.tgz",
+      "version": "file:projects\\plant-store-basket.tgz",
       "integrity": "sha512-6WbyVIKDCLdzj5NF1lreuC/P2hk/L5WTW6WNgfN59NsalKSjjgr1hcpXHpHG3FTNP2dEuqPK15A6V21uAYFduQ==",
       "requires": {
         "standard": "16.0.4"
       }
     },
     "@rush-temp/plant-store-checkout": {
-      "version": "file:projects/plant-store-checkout.tgz",
+      "version": "file:projects\\plant-store-checkout.tgz",
       "integrity": "sha512-ZOV62g32IevYHbEeCIliMMWJOFt6vSfdianRtffEoaklgZv/2CBrmnyqbqDUqPvGMdWZuFLwz2/VJx68396uhQ==",
       "requires": {
         "standard": "16.0.4"
       }
     },
     "@rush-temp/plant-store-home": {
-      "version": "file:projects/plant-store-home.tgz",
+      "version": "file:projects\\plant-store-home.tgz",
       "integrity": "sha512-8RNPDTeyuhnLw/EMZPF62+gXpI9H6j7E5dplwKhHThZJCCklYs+r8lvWwfgCm4j5V5gfyXycXn3kBkb4tQ5XdQ==",
       "requires": {
         "standard": "16.0.4"
       }
     },
     "@rush-temp/plant-store-products": {
-      "version": "file:projects/plant-store-products.tgz",
+      "version": "file:projects\\plant-store-products.tgz",
       "integrity": "sha512-ozXi4b771hIgz7L5BLA4XpbLS+WQpZc9wlv13XHfYjTUsC4M6SNX2+FT/Tj8/O4fOhG8srTUE6ipFy0DQQM4LQ==",
       "requires": {
         "standard": "16.0.4"
       }
     },
     "@rush-temp/resource-loader": {
-      "version": "file:projects/resource-loader.tgz",
+      "version": "file:projects\\resource-loader.tgz",
       "integrity": "sha512-d/EUEkdrx3PjNeWVnAzfk/HtxzJeMEp/FV2/E4Ae6PLtBvyZjMP43o0Zmq7cVKRaxLinEUAZUS8yRpkX83MONQ==",
       "requires": {
         "@ficusjs/testing": "^2.1.0",
@@ -8697,6 +8726,20 @@
         "rollup-plugin-minify-html-literals": "1.2.6",
         "rollup-plugin-terser": "7.0.2",
         "standard": "16.0.4"
+      }
+    },
+    "@tailwindcss/aspect-ratio": {
+      "version": "0.4.2",
+      "resolved": "https://registry.npmjs.org/@tailwindcss/aspect-ratio/-/aspect-ratio-0.4.2.tgz",
+      "integrity": "sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==",
+      "requires": {}
+    },
+    "@tailwindcss/forms": {
+      "version": "0.5.3",
+      "resolved": "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.3.tgz",
+      "integrity": "sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==",
+      "requires": {
+        "mini-svg-data-uri": "^1.2.3"
       }
     },
     "@tootallnate/once": {
@@ -11763,6 +11806,11 @@
       "version": "4.0.0",
       "resolved": "https://registry.npmjs.org/mimic-fn/-/mimic-fn-4.0.0.tgz",
       "integrity": "sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw=="
+    },
+    "mini-svg-data-uri": {
+      "version": "1.4.4",
+      "resolved": "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz",
+      "integrity": "sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg=="
     },
     "minify-html-literals": {
       "version": "1.3.5",
