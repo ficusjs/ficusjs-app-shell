@@ -31,8 +31,27 @@ createLoader({
   breakpointReactive: false,
   desktopUiTagName: 'fas-ui-desktop',
   desktopUiScriptUrl: '/app-ui-desktop/main.js',
+  desktopHTML: `
+    <div>
+      <fas-desktop-header></fas-desktop-header>
+      <fas-desktop-nav></fas-desktop-nav>
+      <main>
+        <div id="router-outlet"></div>
+        <fas-desktop-aside></fas-desktop-aside>
+      </main>
+      <fas-desktop-footer></fas-desktop-footer>
+    </div>
+  `,
   mobileUiTagName: 'fas-ui-mobile',
-  mobileUiScriptUrl: '/app-ui-mobile/main.js'
+  mobileUiScriptUrl: '/app-ui-mobile/main.js',
+  mobileHTML: `
+    <div>
+      <fas-mobile-header></fas-mobile-header>
+      <fas-mobile-nav></fas-mobile-nav>
+      <main id="router-outlet"></main>
+      <fas-mobile-footer></fas-mobile-footer>
+    </div>
+  `
 })
 ```
 
