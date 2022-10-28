@@ -91,8 +91,16 @@
       "allowedCategories": [ "examples", "production" ]
     },
     {
+      "name": "cssnano",
+      "allowedCategories": [ "examples" ]
+    },
+    {
       "name": "esbuild",
       "allowedCategories": [ "examples", "production" ]
+    },
+    {
+      "name": "esbuild-plugin-lit",
+      "allowedCategories": [ "examples" ]
     },
     {
       "name": "fs-extra",
@@ -131,6 +139,10 @@
       "allowedCategories": [ "examples" ]
     },
     {
+      "name": "postcss-cli",
+      "allowedCategories": [ "examples" ]
+    },
+    {
       "name": "postcss-import",
       "allowedCategories": [ "examples" ]
     },
@@ -144,19 +156,19 @@
     },
     {
       "name": "rollup",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "examples", "production" ]
     },
     {
       "name": "rollup-plugin-filesize",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "examples", "production" ]
     },
     {
       "name": "rollup-plugin-minify-html-literals",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "examples", "production" ]
     },
     {
       "name": "rollup-plugin-terser",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "examples", "production" ]
     },
     {
       "name": "standard",

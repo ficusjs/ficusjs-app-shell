@@ -2,6 +2,10 @@
 /* global HTMLElement */
 import { loadResource } from '@ficusjs/resource-loader'
 
+function html (strings) {
+  return elementFromString(strings.raw[0])
+}
+
 function elementFromString (html) {
   const div = document.createElement('div')
   div.innerHTML = html.trim()
@@ -58,7 +62,7 @@ function createComponents (config) {
     connectedCallback () {
       if (!this.classList.contains(config.mobileUiTagName)) {
         this.classList.add(config.mobileUiTagName)
-        this.appendChild(elementFromString(config.mobileHTML))
+        this.appendChild(config.mobileHTML)
       }
     }
   }
@@ -67,7 +71,7 @@ function createComponents (config) {
     connectedCallback () {
       if (!this.classList.contains(config.desktopUiTagName)) {
         this.classList.add(config.desktopUiTagName)
-        this.appendChild(elementFromString(config.desktopHTML))
+        this.appendChild(config.desktopHTML)
       }
     }
   }
@@ -82,7 +86,7 @@ function createComponents (config) {
   window.customElements.get(config.desktopUiTagName) || window.customElements.define(config.desktopUiTagName, FicusDesktopAppShell)
 }
 
-export function createLoader (options) {
+function createLoader (options) {
   const defaultConfig = {
     // root app tag
     appTagName: 'fas-app',
@@ -96,7 +100,7 @@ export function createLoader (options) {
     // desktop shell ui components
     desktopUiTagName: 'fas-ui-desktop',
     desktopUiScriptUrl: '/app-ui-desktop/main.js',
-    desktopHTML: `<div>
+    desktopHTML: html`<div>
       <fas-desktop-header></fas-desktop-header>
       <main>
         <div id="router-outlet"></div>
@@ -108,7 +112,7 @@ export function createLoader (options) {
     // mobile shell ui components
     mobileUiTagName: 'fas-ui-mobile',
     mobileUiScriptUrl: '/app-ui-mobile/main.js',
-    mobileHTML: `<div>
+    mobileHTML: html`<div>
       <fas-mobile-header></fas-mobile-header>
       <fas-mobile-nav></fas-mobile-nav>
       <main id="router-outlet"></main>
@@ -118,3 +122,5 @@ export function createLoader (options) {
   const config = { ...defaultConfig, ...options }
   createComponents(config)
 }
+
+export { createLoader, html }

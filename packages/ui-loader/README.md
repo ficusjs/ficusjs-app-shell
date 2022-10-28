@@ -138,6 +138,10 @@ To provide your own mobile HTML, pass it in as the `mobileHTML` option:
 }
 ```
 
+## Styling
+
+The app shell UI loader does not provide any styling. It is up to you to style the app shell UI. It is recommended to provide the minimal styling required to present the app shell UI to the user. The rest of the styling should be loaded by the UI components.
+
 ## Production
 
-It is recommended to inline the app shell UI loader in production. This embeds the app shell UI loader in the HTML, and removes the need for an additional HTTP request.
+It is recommended to inline the app shell UI loader in production along with any initial styles. This embeds the initial app shell in the HTML, and removes the need for an additional HTTP requests. It also means the app shell UI is available immediately, and the user does not see a flash of unstyled content.

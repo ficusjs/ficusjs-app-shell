@@ -1,5 +1,6 @@
 /* global process */
 import esbuild from 'esbuild'
+import litPlugin from 'esbuild-plugin-lit'
 import glob from 'glob-all'
 
 const bundles = [
@@ -27,14 +28,25 @@ const genericBuildOptions = {
   bundle: true,
   sourcemap: production,
   logLevel: 'info',
-  minify: true
+  minify: true,
+  plugins: [
+    litPlugin({
+      html: {
+        htmlMinifier: {
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeTagWhitespace: true
+        }
+      }
+    })
+  ]
 }
 
 const generateModuleBuild = lib => {
   const build = {
     entryPoints: [`${lib}`],
     format: 'esm',
-    footer: { js: `// FicusJS App Shell Example App ${lib} ES Module bundle | v${process.env.npm_package_version}` },
     ...genericBuildOptions
   }
   const outputEntrypoint = lib.replace('src/', '')
@@ -46,7 +58,7 @@ const builds = [
   ...bundles.map(generateModuleBuild)
 ]
 
-Promise.all(builds.map(esbuild.buildSync))
+Promise.all(builds.map(esbuild.build))
   .catch(err => {
     console.error(err)
     process.exit(1)
