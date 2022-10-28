@@ -68,7 +68,7 @@
     },
     {
       "name": "@rollup/plugin-node-resolve",
-      "allowedCategories": [ "production" ]
+      "allowedCategories": [ "examples", "production" ]
     },
     {
       "name": "@tailwindcss/aspect-ratio",

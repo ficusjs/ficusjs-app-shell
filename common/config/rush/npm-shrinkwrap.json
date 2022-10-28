@@ -492,8 +492,9 @@
     "node_modules/@rush-temp/plant-store": {
       "version": "0.0.0",
       "resolved": "file:projects/plant-store.tgz",
-      "integrity": "sha512-G99ZS2mfK9LnsmpeXei7ILAL83LqJza8o8BUL+DN5Os7E1X0s3xqyahRQfvu+V7RAnqcO4azdblUMDxk0vpvYg==",
+      "integrity": "sha512-WE9Dx8/NNMsxCzCR4VvmKXrdVvHO00zkoz9637Rc3+bKEZ2pxUy1oaohnFopJxiu9MmV3nB2haoYbjoLfWlILw==",
       "dependencies": {
+        "@rollup/plugin-node-resolve": "15.0.1",
         "@tailwindcss/aspect-ratio": "0.4.2",
         "@tailwindcss/forms": "0.5.3",
         "autoprefixer": "10.4.12",
@@ -9516,8 +9517,9 @@
     },
     "@rush-temp/plant-store": {
       "version": "file:projects/plant-store.tgz",
-      "integrity": "sha512-G99ZS2mfK9LnsmpeXei7ILAL83LqJza8o8BUL+DN5Os7E1X0s3xqyahRQfvu+V7RAnqcO4azdblUMDxk0vpvYg==",
+      "integrity": "sha512-WE9Dx8/NNMsxCzCR4VvmKXrdVvHO00zkoz9637Rc3+bKEZ2pxUy1oaohnFopJxiu9MmV3nB2haoYbjoLfWlILw==",
       "requires": {
+        "@rollup/plugin-node-resolve": "15.0.1",
         "@tailwindcss/aspect-ratio": "0.4.2",
         "@tailwindcss/forms": "0.5.3",
         "autoprefixer": "10.4.12",
