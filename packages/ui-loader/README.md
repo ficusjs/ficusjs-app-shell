@@ -4,7 +4,7 @@ The app shell UI loader is the minimal UI required for an app. It is loaded as s
 
 ## Usage
 
-The app shell UI loader loads the initial UI for the app. The initial UI is the minimal UI required for the app to be usable on either mobile or desktop. The initial UI is loaded as soon as possible, and is responsible for loading the rest of the app.
+The app shell UI loader loads the initial UI for the app. The initial UI is the minimal UI required for the app to be visible on either mobile or desktop. The initial UI is loaded as soon as possible, and is responsible for loading the rest of the app.
 
 To use the app shell UI loader, add the following to your `index.html`:
 
@@ -19,7 +19,7 @@ To use the app shell UI loader, add the following to your `index.html`:
 
 ### `createLoader(options)`
 
-The `createLoader(options)` function loads the initial UI for the app. The initial UI is the minimal HTML required for the app to be presented to the user. The initial UI is typically rendered using placeholders before the content is fully loaded. The loader is then responsible for loading the rest of the app.
+The `createLoader(options)` function loads the initial UI for the app. The initial UI is the minimal HTML and CSS required for the app to be presented to the user. The initial UI is typically rendered using placeholders before the content is fully loaded. The loader is then responsible for loading the rest of the app.
 
 Options can be passed to the `createLoader(options)` function to configure the loader. The following example shows the default values for each option. When passing options, all properties are optional, so you only need to override the values you want to change.
 

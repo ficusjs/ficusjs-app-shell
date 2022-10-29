@@ -34,7 +34,7 @@ graph LR;
 
 ## UI loader
 
-The UI loader loads the initial UI for the app. The initial UI is the minimal UI required for the app to be usable on either mobile or desktop. The initial UI is loaded as soon as possible, and is responsible for loading the rest of the app.
+The UI loader loads the initial UI for the app. The initial UI is the minimal HTML and CSS required for the app to be presented to the user. The initial UI is typically rendered using placeholders before the content is fully loaded. It is loaded as soon as possible, and is responsible for loading the rest of the app.
 
 The package [`@ficusjs/app-shell-ui-loader`](packages/ui-loader/) provides the functions for implementing the UI loader.
 
