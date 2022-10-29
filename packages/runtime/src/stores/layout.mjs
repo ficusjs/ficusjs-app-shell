@@ -3,10 +3,7 @@ import { storeNames } from './constants.mjs'
 
 createAppState(storeNames.LAYOUT, {
   initialState: {
-    layout: {
-      appbar: true,
-      navigation: true
-    },
+    layout: {},
     appTitle: null,
     appVersion: null,
     pageTitle: {
@@ -18,5 +15,8 @@ createAppState(storeNames.LAYOUT, {
   persist: createPersist(storeNames.LAYOUT, 'local'),
   setPageTitle (title) {
     document.title = title
+  },
+  setLayout (layout) {
+    this.setState(state => ({ ...state, layout }))
   }
 })

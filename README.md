@@ -46,7 +46,9 @@ The app UI can be whatever you want it to be. You provide separate desktop and m
 
 ## Runtime for modules
 
-The runtime for modules is all the features made available to the modules. It is responsible for loading the app configuration, loading modules and providing the features to the modules.
+The runtime for modules is all the features made available to the modules. The app shell runtime is loaded by the app UI; desktop or mobile.
+
+It is responsible for loading the app configuration, loading modules and providing the features to the modules.
 
 The runtime includes the following features:
 
