@@ -4,7 +4,7 @@ export function createHeader (helpers) {
     renderer,
     render () {
       return html`
-        <header>
+        <header class="bg-white relative z-40">
           <nav aria-label="Top" class="mx-auto max-w-7xl w-full px-8 h-16">
             <!-- Logo & navigation -->
             <ul> 
