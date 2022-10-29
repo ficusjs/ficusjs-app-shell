@@ -22,10 +22,10 @@ const config = glob.sync('src/modules/*/module.js').map(module => {
     input: module,
     output: {
       dir: dirname(module).replace('src/', `${targetDir}/`),
+      sourcemap: production,
       format: 'es'
     },
     external: [],
-    sourcemap: production,
     plugins: getPlugins()
   }
   return build

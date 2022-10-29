@@ -10,7 +10,7 @@ To use the app shell UI loader, add the following to your `index.html`:
 
 ```html
 <script type="module">
-  import { createLoader } from 'https://cdn.skypack.dev/@ficusjs/app-shell-ui-loader'
+  import { createLoader, html } from 'https://cdn.skypack.dev/@ficusjs/app-shell-ui-loader'
   createLoader()
 </script>
 ```
@@ -21,17 +21,18 @@ To use the app shell UI loader, add the following to your `index.html`:
 
 The `createLoader(options)` function loads the initial UI for the app. The initial UI is the minimal HTML required for the app to be presented to the user. The initial UI is typically rendered using placeholders before the content is fully loaded. The loader is then responsible for loading the rest of the app.
 
-Options can be passed to the `createLoader(options)` function to configure the loader. The following example shows the default values for each option. When passing options, all properties are optional so you only need to override the values you want to change.
+Options can be passed to the `createLoader(options)` function to configure the loader. The following example shows the default values for each option. When passing options, all properties are optional, so you only need to override the values you want to change.
 
 ```js
-import { createLoader } from 'https://cdn.skypack.dev/@ficusjs/app-shell-ui-loader'
+import { createLoader, html } from 'https://cdn.skypack.dev/@ficusjs/app-shell-ui-loader'
+
 createLoader({
   appTagName: 'fas-app',
   desktopMediaQuery: '(min-width: 1280px)',
   breakpointReactive: false,
   desktopUiTagName: 'fas-ui-desktop',
   desktopUiScriptUrl: '/app-ui-desktop/main.js',
-  desktopHTML: `
+  desktopHTML: html`
     <div>
       <fas-desktop-header></fas-desktop-header>
       <fas-desktop-nav></fas-desktop-nav>
@@ -44,12 +45,31 @@ createLoader({
   `,
   mobileUiTagName: 'fas-ui-mobile',
   mobileUiScriptUrl: '/app-ui-mobile/main.js',
-  mobileHTML: `
+  mobileHTML: html`
     <div>
       <fas-mobile-header></fas-mobile-header>
       <fas-mobile-nav></fas-mobile-nav>
       <main id="router-outlet"></main>
       <fas-mobile-footer></fas-mobile-footer>
+    </div>
+  `
+})
+```
+
+### `html` tagged template literal
+
+The `html` tagged template literal is used to create HTML templates for the desktop and mobile UI. It must be used to create the `desktopHTML` and `mobileHTML` options.
+
+```js
+import { createLoader, html } from 'https://cdn.skypack.dev/@ficusjs/app-shell-ui-loader'
+
+createLoader({
+  desktopHTML: html`
+    <div>
+      <my-desktop-header></my-desktop-header>
+      <my-desktop-aside></my-desktop-aside>
+      <main id="router-outlet"></main>
+      <my-desktop-footer></my-desktop-footer>
     </div>
   `
 })
@@ -93,11 +113,11 @@ The default desktop HTML is:
 </div>
 ```
 
-To provide your own desktop HTML, pass it in as the `desktopHTML` option:
+To provide your own desktop HTML, pass it in as the `desktopHTML` option using the `html` tagged template literal:
 
 ```js
 {
-  desktopHTML: `
+  desktopHTML: html`
     <div>
       <my-desktop-header></my-desktop-header>
       <my-desktop-aside></my-desktop-aside>
@@ -123,11 +143,11 @@ The default mobile HTML is:
 </div>
 ```
 
-To provide your own mobile HTML, pass it in as the `mobileHTML` option:
+To provide your own mobile HTML, pass it in as the `mobileHTML` option using the `html` tagged template literal:
 
 ```js
 {
-  mobileHTML: `
+  mobileHTML: html`
     <div>
       <my-mobile-header></my-mobile-header>
       <my-mobile-aside></my-mobile-aside>

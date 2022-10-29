@@ -22,7 +22,7 @@ import {
   withI18n,
   withLocalState,
   withStore,
-  withXStateService,
+  withXStateService
 } from './util/shell-runtime.mjs'
 
 function start (options) {

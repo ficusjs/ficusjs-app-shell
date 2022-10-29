@@ -1,18 +1,18 @@
-# Plant Store Example
+# Plant Store Application
 
-The plant store example is a simple example of a single page application built using the Ficus app shell. It has a desktop and mobile UI. It contains modules that provide the application functionality.
+The plant store example is a simple example of a single page application built using the Ficus App Shell. It has a desktop and mobile UI. It contains modules that provide the application functionality.
 
 ## Architecture
 
 The plant store application contains the following structure:
 
 - UI loader
-  - App UI desktop
-    - App shell runtime
-    - Desktop styles
-  - App UI mobile
-    - App shell runtime
-    - Mobile styles
+- App UI desktop
+  - App shell runtime
+  - Desktop styles
+- App UI mobile
+  - App shell runtime
+  - Mobile styles
 - Modules
   - Home
   - Basket
@@ -70,21 +70,3 @@ TODO
 ## Deploying
 
 TODO
-
-## License
-
-This project is licensed under the MIT License - see the [`LICENSE`](../../../LICENSE) file for details.
-
-## Contributing to Ficus App Shell
-
-Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
-
-If you wish to contribute, you can work on any features you think would enhance the library. After adding your code, please send us a Pull Request.
-
-> Please read [CONTRIBUTING](../../../CONTRIBUTING.md) for details on our [CODE OF CONDUCT](../../../CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
-
-## Support
-
-We all need support and motivation. FicusJS is not an exception. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
-
-If you found the library helpful, please consider [sponsoring us](https://github.com/sponsors/ficusjs).

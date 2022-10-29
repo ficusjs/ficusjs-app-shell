@@ -2,8 +2,22 @@
 /* global HTMLElement */
 import { loadResource } from '@ficusjs/resource-loader'
 
-function html (strings) {
-  return elementFromString(strings.raw[0])
+function html (strings, ...vars) {
+  let raw = strings.raw,
+    result = '',
+    i = 1,
+    len = arguments.length,
+    str,
+    variable
+
+  while (i < len) {
+    str = raw[i - 1]
+    variable = vars[i -1]
+    result += str + variable
+    i++
+  }
+  result += raw[raw.length - 1]
+  return elementFromString(result)
 }
 
 function elementFromString (html) {
