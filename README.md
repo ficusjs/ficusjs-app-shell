@@ -116,6 +116,8 @@ The following examples are available:
 
 The plant store is a simple plant store application. It is a good example of how to build an application with Ficus App Shell.
 
+To view the plant store application in action, visit the [live demo](https://ficus-app-shell-plant-store.surge.sh/).
+
 ## License
 
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
