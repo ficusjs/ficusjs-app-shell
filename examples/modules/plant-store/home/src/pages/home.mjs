@@ -1,9 +1,9 @@
-export function createHomePage(helpers) {
-  const { createCustomElement, html, renderer, getRouter } = helpers
+export function createHomePage (helpers) {
+  const { createCustomElement, html, renderer } = helpers
 
   createCustomElement('home-page', {
     renderer,
-    render() {
+    render () {
       return html`
         <div class="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
           <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
