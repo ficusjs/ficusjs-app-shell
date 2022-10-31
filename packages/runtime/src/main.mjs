@@ -18,11 +18,14 @@ import {
   getRouter,
   getXStateService,
   html,
+  interpret,
   renderer,
   withI18n,
   withLocalState,
   withStore,
-  withXStateService
+  withWorkerStore,
+  withXStateService,
+  XStateServiceStatus
 } from './util/shell-runtime.mjs'
 
 function start (options) {
@@ -70,10 +73,13 @@ export {
   getRouter,
   getXStateService,
   html,
+  interpret,
   renderer,
   start,
   withI18n,
   withLocalState,
   withStore,
-  withXStateService
+  withWorkerStore,
+  withXStateService,
+  XStateServiceStatus
 }

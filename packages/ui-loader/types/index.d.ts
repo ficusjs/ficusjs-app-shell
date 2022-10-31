@@ -18,3 +18,10 @@ export interface LoaderOptions {
 }
 
 export declare function createLoader (options?: Partial<LoaderOptions>)
+
+type TemplateFunction<T> = (
+  template: TemplateStringsArray,
+  ...values: any[]
+) => T
+
+export const html: TemplateFunction<string>

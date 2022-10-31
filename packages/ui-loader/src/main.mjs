@@ -3,16 +3,16 @@
 import { loadResource } from '@ficusjs/resource-loader'
 
 function html (strings, ...vars) {
-  let raw = strings.raw,
-    result = '',
-    i = 1,
-    len = arguments.length,
-    str,
-    variable
+  const raw = strings.raw
+  let result = ''
+  let i = 1
+  const len = arguments.length
+  let str
+  let variable
 
   while (i < len) {
     str = raw[i - 1]
-    variable = vars[i -1]
+    variable = vars[i - 1]
     result += str + variable
     i++
   }
@@ -39,13 +39,13 @@ function createComponents (config) {
         } else {
           this._loadMobileUi()
         }
-        
+
         if (config.breakpointReactive) {
           mql.addEventListener('change', this._listener.bind(this))
         }
       }
     }
-    
+
     _listener (e) {
       if (e.matches) {
         this._loadDesktopUi()
@@ -61,7 +61,7 @@ function createComponents (config) {
     _loadMobileUi () {
       this._performLoad(config.mobileUiTagName, config.mobileUiScriptUrl)
     }
-    
+
     _performLoad (tagName, scriptUrl) {
       if (this.children.length === 1) {
         this.removeChild(this.children[0])

@@ -14,10 +14,9 @@ The app shell is structured around the following front-end architectures:
 
 An application built with Ficus App Shell is composed of the following:
 
-- UI loader
-- App UI for desktop and mobile
-- Runtime for modules
-- Modules
+1. UI loader
+2. App UI for desktop and mobile (includes a runtime for modules)
+3. Modules
 
 The execution flow is as follows:
 
@@ -34,21 +33,21 @@ graph LR;
 
 ## UI loader
 
-The UI loader loads the initial UI for the app. The initial UI is the minimal HTML and CSS required for the app to be presented to the user. The initial UI is typically rendered using placeholders before the content is fully loaded. It is loaded as soon as possible, and is responsible for loading the rest of the app.
+The UI loader loads the initial UI for the app. The initial UI is the minimal HTML and CSS required for the app to be presented to the user. The initial UI is typically rendered using placeholders before the app is fully loaded. It is loaded as soon as possible (typically embedded in the `index.html`), and is responsible for loading the rest of the app.
 
-The package [`@ficusjs/app-shell-ui-loader`](packages/ui-loader/) provides the functions for implementing the UI loader.
+The UI loader loads the App UI based on a configured media query. A single app tag is used to determine the App UI to load. The app tag is a custom HTML element that determines the App UI to load based on a configured screen width media query. The app tag is typically placed in the `index.html` file.
 
-## App UI
+> The package [`@ficusjs/app-shell-ui-loader`](packages/ui-loader/) provides the functions for implementing the UI loader.
 
-The app UI is the user interface for the application. It is responsible for rendering the content of the application and loading the runtime.
+## App UI for desktop and mobile
 
-The app UI can be whatever you want it to be. You provide separate desktop and mobile UI bundles. The UI loader loads the UI based on a configured media query.
+The app UI is responsible for rendering the structure of the application (headers, navigation, footer, router outlet etc.) and loading the runtime.
 
-## Runtime for modules
+The app UI can be whatever you want it to be. You provide separate desktop and mobile UI ES modules.
 
-The runtime for modules is all the features made available to the modules. The app shell runtime is loaded by the app UI; desktop or mobile.
+### Runtime for modules
 
-It is responsible for loading the app configuration, loading modules and providing the features to the modules.
+The runtime for modules is a set of helpers made available to the modules. The app shell runtime is loaded by the app UI; desktop or mobile. It is responsible for loading the app configuration, loading modules and providing helpers to the modules.
 
 The runtime includes the following features:
 
@@ -59,7 +58,7 @@ The runtime includes the following features:
 - Pub/sub event bus
 - Internationalisation
 
-Modules can use the features provided by the runtime to implement their features. These include:
+Modules can use the helpers provided by the runtime to implement their features. These include:
 
 - Loading modules
 - Creating web components
@@ -69,7 +68,7 @@ Modules can use the features provided by the runtime to implement their features
 - Registering routes
 - Loading internationalisation messages
 
-The package [`@ficusjs/app-shell-runtime`](packages/runtime/) provides the functions for loading the app runtime.
+> The package [`@ficusjs/app-shell-runtime`](packages/runtime/) provides the functions for loading the runtime.
 
 ## Modules
 

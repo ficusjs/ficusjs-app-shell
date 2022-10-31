@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "description": "UI components for the FicusJS App Shell",
   "type": "module",
-  "main": "/src/main.mjs",
-  "module": "/src/main.mjs",
+  "main": "./src/main.mjs",
+  "module": "./src/main.mjs",
   "types": "types/index.d.ts",
   "scripts": {
     "build": "run-p clean build:js",
     "build:js": "rollup -i src/main.mjs -o dist/main.mjs -f es -m -p \"terser={mangle: { keep_fnames: true, toplevel: true, module: true }}\" -p \"filesize={}\" -p \"minify-html-literals={}\" -p \"node-resolve={}\"",
     "clean": "rimraf dist tmp",
+    "lint": "standard src/**/*.mjs",
     "publish": "",
     "test": ""
   },

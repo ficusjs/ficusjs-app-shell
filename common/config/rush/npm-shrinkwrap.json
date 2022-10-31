@@ -11,9 +11,9 @@
         "@ficusjs/core": "2.1.0",
         "@ficusjs/event-bus": "1.3.0",
         "@ficusjs/i18n": "1.1.0",
-        "@ficusjs/renderers": "5.4.0",
+        "@ficusjs/renderers": "5.4.1",
         "@ficusjs/router": "3.4.0",
-        "@ficusjs/state": "3.4.0",
+        "@ficusjs/state": "3.4.1",
         "@ficusjs/testing": "^2.1.0",
         "@rollup/plugin-node-resolve": "15.0.1",
         "@rush-temp/app-shell-runtime": "file:./projects/app-shell-runtime.tgz",
@@ -218,9 +218,9 @@
       "integrity": "sha512-r5DVMzqy/uEddpG1sp5ywhUXRuOad3mh7kNZAQqTvJdM0xr62NPuLEH8wnt2YvWP8Ksf8JyYXfghBRNC2qng8g=="
     },
     "node_modules/@ficusjs/renderers": {
-      "version": "5.4.0",
-      "resolved": "https://registry.npmjs.org/@ficusjs/renderers/-/renderers-5.4.0.tgz",
-      "integrity": "sha512-4Z9quJDrX9OS4E4nuRuCRBEP0+3t53wpfmw05J9RlQ0Zdl0R82pv/jDyr2gxjJIiyp0IJmowV4GI3RHXAvxsDw=="
+      "version": "5.4.1",
+      "resolved": "https://registry.npmjs.org/@ficusjs/renderers/-/renderers-5.4.1.tgz",
+      "integrity": "sha512-zikJAngyAmqETLfP3RDhLBdjX8TZ88jYjEWD8Z4eOHCifqyQ05McWg7bai/At6fhk06KImOhlnL1FMyLk38CXw=="
     },
     "node_modules/@ficusjs/router": {
       "version": "3.4.0",
@@ -228,13 +228,13 @@
       "integrity": "sha512-bTn4aZh0+gZQ+WXXVKS6KaAaN6BcIXvhganhsVqcBHSj+/WwTdVVeEn0+ibKUY5ewUgEadGpxRuRUAliljAKzA=="
     },
     "node_modules/@ficusjs/state": {
-      "version": "3.4.0",
-      "resolved": "https://registry.npmjs.org/@ficusjs/state/-/state-3.4.0.tgz",
-      "integrity": "sha512-H7reX+hplDv4xA6lGGLOIqQiLuEnz0PA7nZOHp71haruj/6i/5mKYmWmU8ZLsJRxVvbRgsJug1YNaso1gbRlYA==",
+      "version": "3.4.1",
+      "resolved": "https://registry.npmjs.org/@ficusjs/state/-/state-3.4.1.tgz",
+      "integrity": "sha512-Aouv16nVzIlVZNm2ISQgfKGov9DKAUaxvTkyfPja0Nfm2/Zhdu/BsBiuWg2bzjcg1Qn9nfwrJgJMCh9jj1DdDg==",
       "dependencies": {
         "@ficusjs/core": "2.1.0",
         "@xstate/fsm": "2.0.0",
-        "xstate": "4.33.6"
+        "xstate": "4.34.0"
       }
     },
     "node_modules/@ficusjs/testing": {
@@ -457,14 +457,14 @@
     "node_modules/@rush-temp/app-shell-runtime": {
       "version": "0.0.0",
       "resolved": "file:projects/app-shell-runtime.tgz",
-      "integrity": "sha512-4etiI0Kzs28I/fnLewesSNtJbHTF6KV6xMweyTqTjGOM8kMsjN7kb9SgJv0cO9nIYQKpRgt2iL7un63h1hhQ2w==",
+      "integrity": "sha512-odi5e1JD3RTTLHY86j8EKPFQbvtKVyntdVGPFKQoHWb4zPlecaVfr+zoXhTpOjaN1oV9eWG8Vbx3UROWMa/Z8Q==",
       "dependencies": {
         "@ficusjs/core": "2.1.0",
         "@ficusjs/event-bus": "1.3.0",
         "@ficusjs/i18n": "1.1.0",
-        "@ficusjs/renderers": "5.4.0",
+        "@ficusjs/renderers": "5.4.1",
         "@ficusjs/router": "3.4.0",
-        "@ficusjs/state": "3.4.0",
+        "@ficusjs/state": "3.4.1",
         "@rollup/plugin-node-resolve": "15.0.1",
         "npm-run-all": "4.1.5",
         "rimraf": "3.0.2",
@@ -633,9 +633,9 @@
       "integrity": "sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ=="
     },
     "node_modules/@types/node": {
-      "version": "18.11.7",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-18.11.7.tgz",
-      "integrity": "sha512-LhFTglglr63mNXUSRYD8A+ZAIu5sFqNJ4Y2fPuY7UlrySJH87rRRlhtVmMHplmfk5WkoJGmDjE9oiTfyX94CpQ=="
+      "version": "18.11.8",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-18.11.8.tgz",
+      "integrity": "sha512-uGwPWlE0Hj972KkHtCDVwZ8O39GmyjfMane1Z3GUBGGnkZ2USDq7SxLpVIiIHpweY9DS0QTDH0Nw7RNBsAAZ5A=="
     },
     "node_modules/@types/relateurl": {
       "version": "0.2.29",
@@ -1487,9 +1487,9 @@
       }
     },
     "node_modules/caniuse-lite": {
-      "version": "1.0.30001426",
-      "resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001426.tgz",
-      "integrity": "sha512-n7cosrHLl8AWt0wwZw/PJZgUg3lV0gk9LMI7ikGJwhyhgsd2Nb65vKvmSexCqq/J7rbH3mFG6yZZiPR5dLPW5A==",
+      "version": "1.0.30001427",
+      "resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001427.tgz",
+      "integrity": "sha512-lfXQ73oB9c8DP5Suxaszm+Ta2sr/4tf8+381GkIm1MLj/YdLf+rEDyDSRCzeltuyTVGm+/s18gdZ0q+Wmp8VsQ==",
       "funding": [
         {
           "type": "opencollective",
@@ -9054,9 +9054,9 @@
       "integrity": "sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw=="
     },
     "node_modules/xstate": {
-      "version": "4.33.6",
-      "resolved": "https://registry.npmjs.org/xstate/-/xstate-4.33.6.tgz",
-      "integrity": "sha512-A5R4fsVKADWogK2a43ssu8Fz1AF077SfrKP1ZNyDBD8lNa/l4zfR//Luofp5GSWehOQr36Jp0k2z7b+sH2ivyg==",
+      "version": "4.34.0",
+      "resolved": "https://registry.npmjs.org/xstate/-/xstate-4.34.0.tgz",
+      "integrity": "sha512-MFnYz7cJrWuXSZ8IPkcCyLB1a2T3C71kzMeShXKmNaEjBR/JQebKZPHTtxHKZpymESaWO31rA3IQ30TC6LW+sw==",
       "funding": {
         "type": "opencollective",
         "url": "https://opencollective.com/xstate"
@@ -9295,9 +9295,9 @@
       "integrity": "sha512-r5DVMzqy/uEddpG1sp5ywhUXRuOad3mh7kNZAQqTvJdM0xr62NPuLEH8wnt2YvWP8Ksf8JyYXfghBRNC2qng8g=="
     },
     "@ficusjs/renderers": {
-      "version": "5.4.0",
-      "resolved": "https://registry.npmjs.org/@ficusjs/renderers/-/renderers-5.4.0.tgz",
-      "integrity": "sha512-4Z9quJDrX9OS4E4nuRuCRBEP0+3t53wpfmw05J9RlQ0Zdl0R82pv/jDyr2gxjJIiyp0IJmowV4GI3RHXAvxsDw=="
+      "version": "5.4.1",
+      "resolved": "https://registry.npmjs.org/@ficusjs/renderers/-/renderers-5.4.1.tgz",
+      "integrity": "sha512-zikJAngyAmqETLfP3RDhLBdjX8TZ88jYjEWD8Z4eOHCifqyQ05McWg7bai/At6fhk06KImOhlnL1FMyLk38CXw=="
     },
     "@ficusjs/router": {
       "version": "3.4.0",
@@ -9305,13 +9305,13 @@
       "integrity": "sha512-bTn4aZh0+gZQ+WXXVKS6KaAaN6BcIXvhganhsVqcBHSj+/WwTdVVeEn0+ibKUY5ewUgEadGpxRuRUAliljAKzA=="
     },
     "@ficusjs/state": {
-      "version": "3.4.0",
-      "resolved": "https://registry.npmjs.org/@ficusjs/state/-/state-3.4.0.tgz",
-      "integrity": "sha512-H7reX+hplDv4xA6lGGLOIqQiLuEnz0PA7nZOHp71haruj/6i/5mKYmWmU8ZLsJRxVvbRgsJug1YNaso1gbRlYA==",
+      "version": "3.4.1",
+      "resolved": "https://registry.npmjs.org/@ficusjs/state/-/state-3.4.1.tgz",
+      "integrity": "sha512-Aouv16nVzIlVZNm2ISQgfKGov9DKAUaxvTkyfPja0Nfm2/Zhdu/BsBiuWg2bzjcg1Qn9nfwrJgJMCh9jj1DdDg==",
       "requires": {
         "@ficusjs/core": "2.1.0",
         "@xstate/fsm": "2.0.0",
-        "xstate": "4.33.6"
+        "xstate": "4.34.0"
       }
     },
     "@ficusjs/testing": {
@@ -9484,14 +9484,14 @@
     },
     "@rush-temp/app-shell-runtime": {
       "version": "file:projects/app-shell-runtime.tgz",
-      "integrity": "sha512-4etiI0Kzs28I/fnLewesSNtJbHTF6KV6xMweyTqTjGOM8kMsjN7kb9SgJv0cO9nIYQKpRgt2iL7un63h1hhQ2w==",
+      "integrity": "sha512-odi5e1JD3RTTLHY86j8EKPFQbvtKVyntdVGPFKQoHWb4zPlecaVfr+zoXhTpOjaN1oV9eWG8Vbx3UROWMa/Z8Q==",
       "requires": {
         "@ficusjs/core": "2.1.0",
         "@ficusjs/event-bus": "1.3.0",
         "@ficusjs/i18n": "1.1.0",
-        "@ficusjs/renderers": "5.4.0",
+        "@ficusjs/renderers": "5.4.1",
         "@ficusjs/router": "3.4.0",
-        "@ficusjs/state": "3.4.0",
+        "@ficusjs/state": "3.4.1",
         "@rollup/plugin-node-resolve": "15.0.1",
         "npm-run-all": "4.1.5",
         "rimraf": "3.0.2",
@@ -9642,9 +9642,9 @@
       "integrity": "sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ=="
     },
     "@types/node": {
-      "version": "18.11.7",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-18.11.7.tgz",
-      "integrity": "sha512-LhFTglglr63mNXUSRYD8A+ZAIu5sFqNJ4Y2fPuY7UlrySJH87rRRlhtVmMHplmfk5WkoJGmDjE9oiTfyX94CpQ=="
+      "version": "18.11.8",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-18.11.8.tgz",
+      "integrity": "sha512-uGwPWlE0Hj972KkHtCDVwZ8O39GmyjfMane1Z3GUBGGnkZ2USDq7SxLpVIiIHpweY9DS0QTDH0Nw7RNBsAAZ5A=="
     },
     "@types/relateurl": {
       "version": "0.2.29",
@@ -10263,9 +10263,9 @@
       }
     },
     "caniuse-lite": {
-      "version": "1.0.30001426",
-      "resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001426.tgz",
-      "integrity": "sha512-n7cosrHLl8AWt0wwZw/PJZgUg3lV0gk9LMI7ikGJwhyhgsd2Nb65vKvmSexCqq/J7rbH3mFG6yZZiPR5dLPW5A=="
+      "version": "1.0.30001427",
+      "resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001427.tgz",
+      "integrity": "sha512-lfXQ73oB9c8DP5Suxaszm+Ta2sr/4tf8+381GkIm1MLj/YdLf+rEDyDSRCzeltuyTVGm+/s18gdZ0q+Wmp8VsQ=="
     },
     "caseless": {
       "version": "0.12.0",
@@ -15517,9 +15517,9 @@
       "integrity": "sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw=="
     },
     "xstate": {
-      "version": "4.33.6",
-      "resolved": "https://registry.npmjs.org/xstate/-/xstate-4.33.6.tgz",
-      "integrity": "sha512-A5R4fsVKADWogK2a43ssu8Fz1AF077SfrKP1ZNyDBD8lNa/l4zfR//Luofp5GSWehOQr36Jp0k2z7b+sH2ivyg=="
+      "version": "4.34.0",
+      "resolved": "https://registry.npmjs.org/xstate/-/xstate-4.34.0.tgz",
+      "integrity": "sha512-MFnYz7cJrWuXSZ8IPkcCyLB1a2T3C71kzMeShXKmNaEjBR/JQebKZPHTtxHKZpymESaWO31rA3IQ30TC6LW+sw=="
     },
     "xtend": {
       "version": "4.0.2",
