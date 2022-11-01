@@ -6,7 +6,7 @@ export function createBasketStore({ createAppState }) {
       basketContents: [],
     },
     addToBasket(plant) {
-      this.state.basketContents.push(plant);
+      this.state.basketContents = [...this.state.basketContents, plant]
     },
     removeFromBasket(plantId) {
       const plantRemoved = this.state.basketContents.filter(
