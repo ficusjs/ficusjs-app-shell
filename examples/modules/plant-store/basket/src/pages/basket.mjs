@@ -1,30 +1,82 @@
-import { storeNames } from '../util/constants.mjs'
+import { storeNames } from "../util/constants.mjs";
 
-export function createBasketPage (helpers) {
-  const { createCustomElement, html, renderer, getAppState, getI18n, withStore, withI18n } = helpers
+const plant1 = {
+  id: "001",
+  name: "ficus",
+  description: "ficus plant",
+  price: "20$",
+  image_url: "http://imageurl.com/",
+  category: "home-plants",
+  metadata: {
+    humidity: "50%",
+    temperature: "20",
+    watering: "3",
+  },
+};
+
+export function createBasketPage(helpers) {
+  const {
+    createCustomElement,
+    html,
+    renderer,
+    getAppState,
+    getI18n,
+    withStore,
+    withI18n,
+  } = helpers;
   createCustomElement(
-    'basket-page',
-    withStore(getAppState(storeNames.LAYOUT),
+    "basket-page",
+    withStore(
+      {
+        layout: getAppState(storeNames.LAYOUT),
+        basket: getAppState(storeNames.BASKET),
+      },
       withI18n(getI18n(), {
         renderer,
         computed: {
-          pageTitle () {
-            return this.i18n ? this.i18n.t('basket.pageTitle') : 'Basket'
-          }
+          pageTitle() {
+            return this.i18n ? this.i18n.t("basket.pageTitle") : "Basket";
+          },
         },
-        mounted () {
-          this.store.setPageTitle(this.pageTitle)
+        addPlant() {
+          this.store.basket.addToBasket(plant1);
         },
-        render () {
+        deletePlant() {
+          this.store.basket.removeFromBasket(plant1.id);
+        },
+        showStoreContents() {
+          console.log(this.store.basket.state.basketContents);
+        },
+        mounted() {
+          this.store.layout.setPageTitle(this.pageTitle);
+        },
+        render() {
           return html`
             <section>
               <h1>${this.pageTitle}</h1>
-              <button type="button" class="btn-primary">Button</button>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et nisl eget lacus maximus tincidunt. Mauris at viverra neque. Aenean vulputate orci id convallis gravida.</p>
+              <button class="btn-primary" onclick="${this.addPlant}">
+                Add Plant
+              </button>
+              <button class="btn-primary" onclick="${this.deletePlant}">
+                Delete Plant
+              </button>
+              <div>
+                ${this.store.basket.state.basketContents.map(
+                  (product) => html` <span> ${product.description} </span> `
+                )}
+              </div>
+              <button class="btn-primary" onclick="${this.showStoreContents}">
+                Show me what's in the store
+              </button>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                et nisl eget lacus maximus tincidunt. Mauris at viverra neque.
+                Aenean vulputate orci id convallis gravida.
+              </p>
             </section>
-          `
-        }
+          `;
+        },
       })
     )
-  )
+  );
 }

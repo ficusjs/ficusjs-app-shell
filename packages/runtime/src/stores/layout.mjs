@@ -1,5 +1,5 @@
-import { createAppState, createPersist } from '../util/shell-runtime.mjs'
-import { storeNames } from './constants.mjs'
+import { createAppState, createPersist } from "../util/shell-runtime.mjs";
+import { storeNames } from "./constants.mjs";
 
 createAppState(storeNames.LAYOUT, {
   initialState: {
@@ -9,14 +9,14 @@ createAppState(storeNames.LAYOUT, {
     pageTitle: {
       loading: true,
       title: null,
-      subtitle: null
-    }
+      subtitle: null,
+    },
   },
-  persist: createPersist(storeNames.LAYOUT, 'local'),
-  setPageTitle (title) {
-    document.title = title
+  persist: createPersist(storeNames.LAYOUT, "local"),
+  setPageTitle(title) {
+    document.title = title;
   },
-  setLayout (layout) {
-    this.setState(state => ({ ...state, layout }))
-  }
-})
+  setLayout(layout) {
+    this.setState((state) => ({ ...state, layout }));
+  },
+});
