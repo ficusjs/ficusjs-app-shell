@@ -1,11 +1,12 @@
 import { storeNames } from "../util/constants.mjs";
+import { ExtensionBuilder } from 'https://cdn.skypack.dev/ficusjs@5'
 
 const plant1 = {
   id: "001",
-  name: "ficus",
-  description: "ficus plant",
-  price: "20$",
-  image_url: "http://imageurl.com/",
+  name: "Ficus",
+  description: "Ficus plant",
+  price: "20",
+  image_url: "/assets/img/home-page-hero-image-tile-04.jpg",
   category: "home-plants",
   metadata: {
     humidity: "50%",
@@ -14,38 +15,40 @@ const plant1 = {
   },
 };
 
+const plant2 = {
+  id: "002",
+  name: "Lemon",
+  description: "Lemon plant",
+  price: "40",
+  image_url: "/assets/img/home-page-hero-image-tile-05.jpg",
+  category: "home-plants",
+  metadata: {
+    humidity: "30%",
+    temperature: "30",
+    watering: "5",
+  },
+};
+
 export function createBasketPage(helpers) {
-  const {
-    createCustomElement,
-    html,
-    renderer,
-    getAppState,
-    getI18n,
-    withStore,
-    withI18n,
-  } = helpers;
+  const { createCustomElement, html, renderer, getAppState, getI18n, withStore, withI18n } = helpers;
   createCustomElement(
     "basket-page",
-    withStore(
-      {
-        layout: getAppState(storeNames.LAYOUT),
-        basket: getAppState(storeNames.BASKET),
-      },
-      withI18n(getI18n(), {
+    ExtensionBuilder
+      .newInstance()
+      .withStore({ layout: getAppState(storeNames.LAYOUT), basket: getAppState(storeNames.BASKET)})
+      .withI18n(getI18n())
+      .create({
         renderer,
         computed: {
           pageTitle() {
             return this.i18n ? this.i18n.t("basket.pageTitle") : "Basket";
           },
         },
-        addPlant() {
+        addPlant1() {
           this.store.basket.addToBasket(plant1);
         },
-        deletePlant() {
-          this.store.basket.removeFromBasket(plant1.id);
-        },
-        showStoreContents() {
-          console.log(this.store.basket.state.basketContents);
+        addPlant2() {
+          this.store.basket.addToBasket(plant2);
         },
         mounted() {
           this.store.layout.setPageTitle(this.pageTitle);
@@ -54,29 +57,23 @@ export function createBasketPage(helpers) {
           return html`
             <section>
               <h1>${this.pageTitle}</h1>
-              <button class="btn-primary" onclick="${this.addPlant}">
-                Add Plant
-              </button>
-              <button class="btn-primary" onclick="${this.deletePlant}">
-                Delete Plant
-              </button>
+              <div>
+                <button onclick="${this.addPlant1}">
+                  Add Plant 1
+                </button>
+                <button onclick="${this.addPlant2}">
+                  Add Plant 2
+                </button>
+              </div>
               <div>
                 ${this.store.basket.state.basketContents.map(
-                  (product) => html` <span> ${product.description} </span> `
+                  (item) => html` <basket-item .item="${item}"></basket-item>`
                 )}
               </div>
-              <button class="btn-primary" onclick="${this.showStoreContents}">
-                Show me what's in the store
-              </button>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                et nisl eget lacus maximus tincidunt. Mauris at viverra neque.
-                Aenean vulputate orci id convallis gravida.
-              </p>
+              <basket-total></basket-total>
             </section>
           `;
         },
       })
-    )
   );
 }
