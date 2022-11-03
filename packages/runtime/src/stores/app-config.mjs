@@ -23,11 +23,12 @@ helpers.createAppState(storeNames.APP_CONFIG, {
       httpGet(url, {
         'Content-type': 'application/json'
       })
-        .then(data => that.loadConfigModules(data))
         .then(data => {
           that.setState(state => ({ ...state, appConfig: { ...state.appConfig, loaded: true, data: mapRoutesForModules(data) } }))
-          resolve()
+          return data
         })
+        .then(data => that.loadConfigModules(data))
+        .then(() => resolve())
         .catch(e => reject(e))
     })
   },

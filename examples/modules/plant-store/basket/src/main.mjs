@@ -6,8 +6,8 @@ import { createComponents } from "./components/create-components.mjs";
 export const module = {
   async create(helpers) {
     createRoutes(helpers);
-    await createMessages(helpers);
     createBasketStore(helpers);
     createComponents(helpers);
+    await createMessages(helpers);
   },
 };

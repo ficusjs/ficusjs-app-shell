@@ -879,16 +879,16 @@ nav [role="button"]{
   height: 100%;
 }
 
+.h-6{
+  height: 1.5rem;
+}
+
 .h-16{
   height: 4rem;
 }
 
 .h-8{
   height: 2rem;
-}
-
-.h-6{
-  height: 1.5rem;
 }
 
 .w-44{
@@ -899,16 +899,16 @@ nav [role="button"]{
   width: 100%;
 }
 
+.w-6{
+  width: 1.5rem;
+}
+
 .w-auto{
   width: auto;
 }
 
 .w-px{
   width: 1px;
-}
-
-.w-6{
-  width: 1.5rem;
 }
 
 .max-w-7xl{

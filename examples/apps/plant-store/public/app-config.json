@@ -10,9 +10,6 @@
       ],
       "layout": {
         "desktop": {
-          "header": {
-            "home": "home-header-action"
-          },
           "nav": {
             "title": "Home",
             "path": "/"
@@ -41,6 +38,7 @@
       "id": "products",
       "moduleUrl": "/modules/products/module.js",
       "startPath": "/products",
+      "preload": true,
       "routes": [
         { "path": "/products" }
       ],
@@ -49,6 +47,16 @@
           "nav": {
             "title": "Products",
             "path": "/products"
+          },
+          "header": {
+            "search": {
+              "component": "products-header-action",
+              "order": 40,
+              "position": "right",
+              "placeholder": {
+                "type": "icon"
+              }
+            }
           }
         }
       }
@@ -57,6 +65,7 @@
       "id": "basket",
       "moduleUrl": "/modules/basket/module.js",
       "startPath": "/basket",
+      "preload": true,
       "routes": [
         { "path": "/basket" }
       ],
@@ -65,6 +74,16 @@
           "nav": {
             "title": "Basket",
             "path": "/basket"
+          },
+          "header": {
+            "basket": {
+              "component": "basket-header-action",
+              "order": 50,
+              "position": "right",
+              "placeholder": {
+                "type": "icon"
+              }
+            }
           }
         }
       }
@@ -76,6 +95,38 @@
       "routes": [
         { "path": "/checkout" }
       ]
+    },
+    {
+      "id": "profile",
+      "moduleUrl": "/modules/profile/module.js",
+      "startPath": "/profile",
+      "routes": [
+        { "path": "/profile" }
+      ],
+      "layout": {
+        "desktop": {
+          "header": {
+            "signIn": {
+              "component": "sign-in-action",
+              "position": "right",
+              "order": 10,
+              "placeholder": {
+                "type": "text",
+                "text": "Sign In"
+              }
+            },
+            "createAccount": {
+              "component": "create-account-action",
+              "position": "right",
+              "order": 11,
+              "placeholder": {
+                "type": "text",
+                "text": "Create Account"
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }
