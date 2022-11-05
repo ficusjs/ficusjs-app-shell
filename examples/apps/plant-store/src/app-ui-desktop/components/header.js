@@ -2,35 +2,52 @@ import { storeNames } from '../../util/store-names.js'
 import { unsafeHTML } from '../../util/unsafe-html.js'
 
 export function createHeader (helpers) {
-  const { html, renderer, withStore, getAppState } = helpers
+  const { html, renderer, withStore, getAppState, getRouter } = helpers
   return withStore(getAppState(storeNames.APP_CONFIG),{
     renderer,
     computed: {
       items () {
         const modules = this.store.getState('appConfig.data.modules')
         if (!modules) return []
-        const headerModules = modules.reduce((prev, curr) => [...prev, (curr.layout?.desktop?.header)], []).filter(x => x != null)
-        const headerModules1 = headerModules.map((module) => {
-          const moduleKeys = Object.keys(module)
+        const headerComponents = modules.reduce((prev, curr) => [...prev, (curr.layout?.desktop?.header)], []).filter(x => x != null)
+        const sortedComponents = headerComponents.map((component) => {
+          const moduleKeys = Object.keys(component)
           return moduleKeys.map((key) => {
-            return module[key]
+            return component[key]
           })
+        }).flat().sort((a, b) => a.order - b.order)
+        // adding a separator if two buttons are adjacent
+        sortedComponents.forEach((component, index) => {
+          if (sortedComponents[index].type === 'link' && sortedComponents[index + 1].type === 'link') {
+            sortedComponents.splice(index + 1, 0, { type: 'separator' })
+          } 
         })
-        return headerModules1.flat().sort((a, b) => a.order - b.order)
+        return sortedComponents
+      }
+    },
+    handleClick (e, item) {
+      if (item.link.path) {
+        const router = getRouter()
+        this.store.loadModuleByPath(item.link.path).then(() => router.push(item.link.path))
       }
     },
     getPlaceholder (item) {
       switch (item.placeholder.type) {
-        case 'text':
-          return `<span>${item.placeholder.text}</span>`
         case 'icon':
-          return `<span class="h-6 w-6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>`
+          return `<fas-desktop-icon-placeholder icon-type="${item.placeholder.icon}"></fas-desktop-icon-placeholder>`
         default:
           return ''
       }
     },
     getItem(item) {
-      return `<${item.component}>${this.getPlaceholder(item)}</${item.component}>`
+      switch (item.type) {
+        case 'placeholder':
+          return unsafeHTML(`<li><${item.component}>${this.getPlaceholder(item)}</${item.component}></li>`)
+        case 'link':
+          return html`<li><button type="button" onclick="${(e) => this.handleClick(e, item)}">${item.link.text}</button></li>`
+        case 'separator':
+          return html`<span class="h-6 w-px mx-2 bg-gray-200" aria-hidden="true"></span>`
+      }
     },
     render () {
       return html`
@@ -46,14 +63,7 @@ export function createHeader (helpers) {
               <fas-desktop-nav></fas-desktop-nav>
             </ul>
             <ul class="ml-auto">
-              ${this.items.map((item) => html`<li>${unsafeHTML(this.getItem(item))}</li>`)}
-              <li>
-                <a href="#">Sign in</a>
-              </li>
-              <span class="h-6 w-px mx-2 bg-gray-200" aria-hidden="true"></span>
-              <li>
-                <a href="#">Create account</a>
-              </li>
+              ${this.items.map((item) => html`${this.getItem(item)}`)}
             </ul>
           </nav>
         </header>

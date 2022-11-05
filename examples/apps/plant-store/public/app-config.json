@@ -38,7 +38,6 @@
       "id": "products",
       "moduleUrl": "/modules/products/module.js",
       "startPath": "/products",
-      "preload": true,
       "routes": [
         { "path": "/products" }
       ],
@@ -51,10 +50,12 @@
           "header": {
             "search": {
               "component": "products-header-action",
-              "order": 40,
+              "type": "placeholder",
               "position": "right",
+              "order": 40,
               "placeholder": {
-                "type": "icon"
+                "type": "icon",
+                "icon": "search"
               }
             }
           }
@@ -78,10 +79,12 @@
           "header": {
             "basket": {
               "component": "basket-header-action",
-              "order": 50,
+              "type": "placeholder",
               "position": "right",
+              "order": 50,
               "placeholder": {
-                "type": "icon"
+                "type": "icon",
+                "icon": "basket"
               }
             }
           }
@@ -108,19 +111,21 @@
           "header": {
             "signIn": {
               "component": "sign-in-action",
+              "type": "link",
               "position": "right",
               "order": 10,
-              "placeholder": {
-                "type": "text",
+              "link": {
+                "path": "/profile",
                 "text": "Sign In"
               }
             },
             "createAccount": {
               "component": "create-account-action",
+              "type": "link",
               "position": "right",
               "order": 11,
-              "placeholder": {
-                "type": "text",
+              "link": {
+                "path": "/profile",
                 "text": "Create Account"
               }
             }
