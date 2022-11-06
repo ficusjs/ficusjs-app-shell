@@ -1,7 +1,7 @@
-import { ExtensionBuilder } from 'https://cdn.skypack.dev/ficusjs@5'
+import { ExtensionBuilder } from '../util/extension-builder.mjs'
 import { storeNames } from '../util/constants.mjs'
 
-export function createBasketItem ({ html, withStore, getAppState, renderer, getI18n }) {
+export function createBasketItem ({ html, getAppState, renderer, getI18n }) {
   return ExtensionBuilder
     .newInstance()
     .withStore(getAppState(storeNames.BASKET))
@@ -10,7 +10,7 @@ export function createBasketItem ({ html, withStore, getAppState, renderer, getI
       renderer,
       props: {
         item: {
-          type: Object,
+          type: Object
         }
       },
       computed: {
@@ -18,10 +18,10 @@ export function createBasketItem ({ html, withStore, getAppState, renderer, getI
           return this.props.item
         }
       },
-      removeFromBasket() {
-        this.store.removeFromBasket(this.basketItem.id);
+      removeFromBasket () {
+        this.store.removeFromBasket(this.basketItem.id)
       },
-      render() {
+      render () {
         return html`
           <article>
             <div class="flex">
@@ -40,7 +40,7 @@ export function createBasketItem ({ html, withStore, getAppState, renderer, getI
               </div>
             </div>
           </article>
-          `;
-      },
+          `
+      }
     })
 }
