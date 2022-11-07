@@ -15,5 +15,22 @@
     "account": {
       "pageTitle": "Your account"
     }
+  },
+  "it": {
+    "signIn": {
+      "pageTitle": "Entra"
+    },
+    "signUp": {
+      "pageTitle": "Registrati"
+    },
+    "forgotPassword": {
+      "pageTitle": "Hai dimenticato la password?"
+    },
+    "resetPassword": {
+      "pageTitle": "Reimposta la password"
+    },
+    "account": {
+      "pageTitle": "Il tuo account"
+    }
   }
 }

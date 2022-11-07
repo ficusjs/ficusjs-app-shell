@@ -4,5 +4,11 @@
     "search": {
       "pageTitle": "Product search"
     }
+  },
+  "it": {
+    "pageTitle": "Prodotti",
+    "search": {
+      "pageTitle": "Cerca un prodotto"
+    }
   }
 }
