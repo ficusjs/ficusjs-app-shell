@@ -1,7 +1,7 @@
 import { createRoutes } from './routes/create-routes.mjs'
 import { createMessages } from './messages/create-messages.mjs'
 import { createComponents } from './components/create-components.mjs'
-import { createStores } from './store/create-stores.mjs'
+import { createStores } from './stores/create-stores.mjs'
 
 export const module = {
   async create (helpers) {

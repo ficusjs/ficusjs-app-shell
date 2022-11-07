@@ -3,7 +3,7 @@ import { unsafeHTML } from '../../util/unsafe-html.js'
 
 export function createHeader (helpers) {
   const { html, renderer, withStore, getAppState, getRouter } = helpers
-  return withStore(getAppState(storeNames.APP_CONFIG),{
+  return withStore(getAppState(storeNames.APP_CONFIG), {
     renderer,
     computed: {
       items () {
@@ -18,9 +18,9 @@ export function createHeader (helpers) {
         }).flat().sort((a, b) => a.order - b.order)
         // adding a separator if two buttons are adjacent
         sortedComponents.forEach((component, index) => {
-          if (sortedComponents[index].type === 'link' && sortedComponents[index + 1].type === 'link') {
+          if (sortedComponents[index].type === 'component' && sortedComponents[index + 1].type === 'component') {
             sortedComponents.splice(index + 1, 0, { type: 'separator' })
-          } 
+          }
         })
         return sortedComponents
       }
@@ -31,20 +31,30 @@ export function createHeader (helpers) {
         this.store.loadModuleByPath(item.link.path).then(() => router.push(item.link.path))
       }
     },
+    getLink (item) {
+      switch (item.link.type) {
+        case 'icon':
+          return html`<fas-desktop-icon-placeholder icon-type="${item.link.icon}"></fas-desktop-icon-placeholder>`
+        case 'text':
+          return html`<span>${item.link.text}</span>`
+      }
+    },
     getPlaceholder (item) {
       switch (item.placeholder.type) {
         case 'icon':
           return `<fas-desktop-icon-placeholder icon-type="${item.placeholder.icon}"></fas-desktop-icon-placeholder>`
+        case 'text':
+          return `<fas-desktop-text-placeholder tag="${item.component}" text="${item.placeholder.text}"></fas-desktop-text-placeholder>`
         default:
-          return ''
+          return '<span></span>'
       }
     },
-    getItem(item) {
+    getItem (item) {
       switch (item.type) {
-        case 'placeholder':
+        case 'component':
           return unsafeHTML(`<li><${item.component}>${this.getPlaceholder(item)}</${item.component}></li>`)
         case 'link':
-          return html`<li><button type="button" onclick="${(e) => this.handleClick(e, item)}">${item.link.text}</button></li>`
+          return html`<li><button type="button" onclick="${(e) => this.handleClick(e, item)}">${this.getLink(item)}</button></li>`
         case 'separator':
           return html`<span class="h-6 w-px mx-2 bg-gray-200" aria-hidden="true"></span>`
       }
@@ -55,10 +65,10 @@ export function createHeader (helpers) {
           <nav aria-label="Top" class="mx-auto max-w-7xl w-full px-8 h-16">
             <ul>
               <li>
-                <a href="#">
-                  <span class="sr-only">FicusJS</span>
-                  <img class="h-8 w-auto" src="/assets/img/logo.svg" alt="Ficus logo">
-                </a>
+                <button type="button" onclick="${() => getRouter().push('/')}">
+                  <span class="sr-only">Plant Store</span>
+                  <img class="h-8 w-auto" src="/assets/img/logo.svg" alt="FicusJS">
+                </button>
               </li>
               <fas-desktop-nav></fas-desktop-nav>
             </ul>

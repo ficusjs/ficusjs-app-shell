@@ -81,6 +81,12 @@
       "projectFolder": "examples/modules/plant-store/products",
       "reviewCategory": "examples",
       "shouldPublish": false
+    },
+    {
+      "packageName": "@example-module/plant-store-profile",
+      "projectFolder": "examples/modules/plant-store/profile",
+      "reviewCategory": "examples",
+      "shouldPublish": false
     }
   ]
 }

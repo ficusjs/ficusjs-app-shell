@@ -55,6 +55,7 @@
     "@example-module/plant-store-checkout": "^0.1.0",
     "@example-module/plant-store-home": "^0.1.0",
     "@example-module/plant-store-products": "^0.1.0",
+    "@example-module/plant-store-profile": "^0.1.0",
     "@ficusjs/app-shell-runtime": "^0.1.0",
     "@ficusjs/app-shell-ui-loader": "^0.1.0",
     "@ficusjs/resource-loader": "^0.1.0",

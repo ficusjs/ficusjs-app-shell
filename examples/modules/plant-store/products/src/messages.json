@@ -1,5 +1,8 @@
 {
   "en": {
-    "pageTitle": "Products page"
+    "pageTitle": "Products page",
+    "search": {
+      "pageTitle": "Product search"
+    }
   }
 }

@@ -19,6 +19,10 @@
       "allowedCategories": [ "examples" ]
     },
     {
+      "name": "@example-module/plant-store-profile",
+      "allowedCategories": [ "examples" ]
+    },
+    {
       "name": "@ficusjs/app-shell",
       "allowedCategories": [ "examples" ]
     },
@@ -100,6 +104,10 @@
     },
     {
       "name": "esbuild-plugin-lit",
+      "allowedCategories": [ "examples" ]
+    },
+    {
+      "name": "ficusjs",
       "allowedCategories": [ "examples" ]
     },
     {

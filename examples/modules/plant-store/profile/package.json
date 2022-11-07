@@ -1,7 +1,7 @@
 {
-  "name": "@example-module/plant-store-basket",
+  "name": "@example-module/plant-store-profile",
   "version": "0.1.0",
-  "description": "Plant store basket module",
+  "description": "Plant store profile module",
   "type": "module",
   "main": "src/main.mjs",
   "module": "src/main.mjs",
@@ -10,9 +10,6 @@
   },
   "author": "Matt Levy",
   "license": "MIT",
-  "dependencies": {
-    "ficusjs": "5.5.0"
-  },
   "devDependencies": {
     "standard": "16.0.4"
   },

@@ -39,7 +39,8 @@
       "moduleUrl": "/modules/products/module.js",
       "startPath": "/products",
       "routes": [
-        { "path": "/products" }
+        { "path": "/products" },
+        { "path": "/products/search" }
       ],
       "layout": {
         "desktop": {
@@ -49,12 +50,12 @@
           },
           "header": {
             "search": {
-              "component": "products-header-action",
-              "type": "placeholder",
+              "type": "link",
               "position": "right",
               "order": 40,
-              "placeholder": {
+              "link": {
                 "type": "icon",
+                "path": "/products/search",
                 "icon": "search"
               }
             }
@@ -78,8 +79,8 @@
           },
           "header": {
             "basket": {
+              "type": "component",
               "component": "basket-header-action",
-              "type": "placeholder",
               "position": "right",
               "order": 50,
               "placeholder": {
@@ -104,29 +105,33 @@
       "moduleUrl": "/modules/profile/module.js",
       "startPath": "/profile",
       "routes": [
-        { "path": "/profile" }
+        { "path": "/profile/sign-in" },
+        { "path": "/profile/sign-up" },
+        { "path": "/profile/forgot-password" },
+        { "path": "/profile/reset-password" },
+        { "path": "/profile/account" }
       ],
       "layout": {
         "desktop": {
           "header": {
             "signIn": {
-              "component": "sign-in-action",
-              "type": "link",
+              "type": "component",
+              "component": "profile-sign-in-header-action",
               "position": "right",
               "order": 10,
-              "link": {
-                "path": "/profile",
+              "placeholder": {
+                "type": "text",
                 "text": "Sign In"
               }
             },
-            "createAccount": {
-              "component": "create-account-action",
-              "type": "link",
+            "account": {
+              "type": "component",
+              "component": "profile-account-header-action",
               "position": "right",
               "order": 11,
-              "link": {
-                "path": "/profile",
-                "text": "Create Account"
+              "placeholder": {
+                "type": "text",
+                "text": "Sign Up"
               }
             }
           }
