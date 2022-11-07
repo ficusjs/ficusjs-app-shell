@@ -987,6 +987,14 @@ nav [role="button"]{
   padding-bottom: 20rem;
 }
 
+.pt-8{
+  padding-top: 2rem;
+}
+
+.pb-8{
+  padding-bottom: 2rem;
+}
+
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;

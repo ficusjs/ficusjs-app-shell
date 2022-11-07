@@ -39,6 +39,10 @@
       "allowedCategories": [ "examples" ]
     },
     {
+      "name": "@ficusjs/component-extensions",
+      "allowedCategories": [ "examples" ]
+    },
+    {
       "name": "@ficusjs/core",
       "allowedCategories": [ "production" ]
     },

@@ -55,8 +55,7 @@ export function createBasketPage (helpers) {
         },
         render () {
           return html`
-            <section>
-              <h1>${this.pageTitle}</h1>
+            <fas-page page-title="${this.pageTitle}">
               <div>
                 <button onclick="${this.addPlant1}">
                   Add Plant 1
@@ -71,7 +70,7 @@ export function createBasketPage (helpers) {
                 )}
               </div>
               <basket-total></basket-total>
-            </section>
+            </fas-page>
           `
         }
       })

@@ -17,10 +17,9 @@ export function createSignInPage (helpers) {
         },
         render () {
           return html`
-            <section>
-              <h1>${this.pageTitle}</h1>
+            <fas-page page-title="${this.pageTitle}">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et nisl eget lacus maximus tincidunt. Mauris at viverra neque. Aenean vulputate orci id convallis gravida.</p>
-            </section>
+            </fas-page>
           `
         }
       })
