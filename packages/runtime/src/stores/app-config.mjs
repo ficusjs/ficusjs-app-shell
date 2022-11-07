@@ -5,6 +5,7 @@ import { httpGet } from '../util/http.mjs'
 import { use } from '../util/module.mjs'
 import { mapRoutesForModules } from '../util/map-routes-for-modules.mjs'
 import { objectContainsValue } from '../util/object-contains-value.mjs'
+import { addI18nMessages } from '../util/add-i18n-messages.mjs'
 
 helpers.createAppState(storeNames.APP_CONFIG, {
   initialState: {
@@ -25,6 +26,7 @@ helpers.createAppState(storeNames.APP_CONFIG, {
         'Content-type': 'application/json'
       })
         .then(data => {
+          addI18nMessages(data)
           that.setState(state => ({ ...state, appConfig: { ...state.appConfig, loaded: true, data: mapRoutesForModules(data) } }))
           return data
         })

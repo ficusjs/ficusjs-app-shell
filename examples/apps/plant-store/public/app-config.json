@@ -1,5 +1,10 @@
 {
   "startPath": "/",
+  "messages": {
+    "en": {
+      "appTitle": "Plant Store"
+    }
+  },
   "modules": [
     {
       "id": "home",
@@ -8,28 +13,50 @@
       "routes": [
         { "path": "/" }
       ],
+      "messages": {
+        "en": {
+          "navTitle": "Home"
+        }
+      },
       "layout": {
         "desktop": {
           "nav": {
-            "title": "Home",
-            "path": "/"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           },
           "aside": {
-            "home": "home-aside-action"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           },
           "footer": {
-            "home": "home-footer-action"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           }
         },
         "mobile": {
           "header": {
-            "home": "home-header-action"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           },
           "aside": {
-            "home": "home-aside-action"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           },
           "bar": {
-            "home": "home-footer-action"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           }
         }
       }
@@ -42,11 +69,18 @@
         { "path": "/products" },
         { "path": "/products/search" }
       ],
+      "messages": {
+        "en": {
+          "navTitle": "Products"
+        }
+      },
       "layout": {
         "desktop": {
           "nav": {
-            "title": "Products",
-            "path": "/products"
+            "products": {
+              "titleI18n": "products.navTitle",
+              "path": "/products"
+            }
           },
           "header": {
             "search": {
@@ -71,11 +105,18 @@
       "routes": [
         { "path": "/basket" }
       ],
+      "messages": {
+        "en": {
+          "navTitle": "Basket"
+        }
+      },
       "layout": {
         "desktop": {
           "nav": {
-            "title": "Basket",
-            "path": "/basket"
+            "basket": {
+              "titleI18n": "basket.navTitle",
+              "path": "/basket"
+            }
           },
           "header": {
             "basket": {
@@ -104,6 +145,14 @@
       "id": "profile",
       "moduleUrl": "/modules/profile/module.js",
       "startPath": "/profile",
+      "messages": {
+        "en": {
+          "header": {
+            "signIn": "Sign In",
+            "signUp": "Sign Up"
+          }
+        }
+      },
       "routes": [
         { "path": "/profile/sign-in" },
         { "path": "/profile/sign-up" },
@@ -121,7 +170,7 @@
               "order": 10,
               "placeholder": {
                 "type": "text",
-                "text": "Sign In"
+                "textI18n": "profile.header.signIn"
               }
             },
             "account": {
@@ -131,7 +180,7 @@
               "order": 11,
               "placeholder": {
                 "type": "text",
-                "text": "Sign Up"
+                "textI18n": "profile.header.signUp"
               }
             }
           }
