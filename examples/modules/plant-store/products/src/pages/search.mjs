@@ -1,11 +1,15 @@
 import { storeNames } from '../util/constants.mjs'
+import { ExtensionBuilder } from '../util/extension-builder.mjs'
 
 export function createSearchPage (helpers) {
-  const { createCustomElement, html, renderer, getAppState, getI18n, withStore, withI18n } = helpers
+  const { createCustomElement, html, renderer, getAppState, getI18n } = helpers
   createCustomElement(
     'product-search-page',
-    withStore(getAppState(storeNames.LAYOUT),
-      withI18n(getI18n(), {
+    ExtensionBuilder
+      .newInstance()
+      .withStore(getAppState(storeNames.LAYOUT))
+      .withI18n(getI18n())
+      .create({
         renderer,
         computed: {
           pageTitle () {
@@ -23,6 +27,5 @@ export function createSearchPage (helpers) {
           `
         }
       })
-    )
   )
 }

@@ -73,6 +73,7 @@
       "startPath": "/products",
       "routes": [
         { "path": "/products" },
+        { "path": "/products/categories" },
         { "path": "/products/search" }
       ],
       "messages": {

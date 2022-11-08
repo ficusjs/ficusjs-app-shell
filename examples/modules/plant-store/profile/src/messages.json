@@ -1,10 +1,12 @@
 {
   "en": {
     "signIn": {
-      "pageTitle": "Sign in"
+      "pageTitle": "Sign in",
+      "buttonText": "Sign In"
     },
     "signUp": {
-      "pageTitle": "Sign up"
+      "pageTitle": "Sign up",
+      "buttonText": "Sign Up"
     },
     "forgotPassword": {
       "pageTitle": "Forgot your password?"

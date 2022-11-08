@@ -1,10 +1,11 @@
 import { ExtensionBuilder } from '../util/extension-builder.mjs'
 import { storeNames } from '../util/constants.mjs'
 
-export function createSignInHeaderAction ({ html, getAppState, getRouter, renderer }) {
+export function createSignInHeaderAction ({ html, getAppState, getRouter, renderer, getI18n }) {
   return ExtensionBuilder
     .newInstance()
     .withStore(getAppState(storeNames.ACCOUNT))
+    .withI18n(getI18n())
     .create({
       renderer,
       handleClick () {
@@ -13,7 +14,7 @@ export function createSignInHeaderAction ({ html, getAppState, getRouter, render
       },
       render () {
         return html`
-          <button type="button" class="text-gray-400 hover:text-gray-500" onclick=${this.handleClick}>Sign In</button>
+          <button type="button" class="text-gray-400 hover:text-gray-500" onclick=${this.handleClick}>${this.i18n.t('profile.signIn.buttonText')}</button>
         `
       }
     })

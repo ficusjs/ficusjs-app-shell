@@ -1,8 +1,11 @@
 {
   "en": {
-    "pageTitle": "Products page",
+    "pageTitle": "Products",
     "search": {
       "pageTitle": "Product search"
+    },
+    "categories": {
+      "pageTitle": "Categories"
     }
   }
 }

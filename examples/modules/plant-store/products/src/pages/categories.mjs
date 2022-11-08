@@ -1,23 +1,27 @@
 import { storeNames } from '../util/constants.mjs'
 import { ExtensionBuilder } from '../util/extension-builder.mjs'
 
-export function createSignUpPage (helpers) {
+export function createCategoriesPage (helpers) {
   const { createCustomElement, html, renderer, getAppState, getI18n } = helpers
   createCustomElement(
-    'profile-sign-up-page',
+    'product-categories-page',
     ExtensionBuilder
       .newInstance()
-      .withStore(getAppState(storeNames.LAYOUT))
-      .withI18n(getI18n())
+      .withStore({
+        layout: getAppState(storeNames.LAYOUT),
+        categories: getAppState(storeNames.CATEGORIES)
+      })
+      .withI18n(getI18n)
       .create({
         renderer,
         computed: {
           pageTitle () {
-            return this.i18n ? this.i18n.t('profile.signUp.pageTitle') : 'Profile sign-up'
+            return this.i18n ? this.i18n.t('products.categories.pageTitle') : 'Categories'
           }
         },
         mounted () {
-          this.store.setPageTitle(this.pageTitle)
+          this.store.layout.setPageTitle(this.pageTitle)
+          this.store.categories.loadCategoriesIfNotLoaded()
         },
         render () {
           return html`

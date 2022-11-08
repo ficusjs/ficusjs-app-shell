@@ -57,10 +57,10 @@ export function createBasketPage (helpers) {
           return html`
             <fas-page page-title="${this.pageTitle}">
               <div>
-                <button onclick="${this.addPlant1}">
+                <button type="button" onclick="${this.addPlant1}">
                   Add Plant 1
                 </button>
-                <button onclick="${this.addPlant2}">
+                <button type="button" onclick="${this.addPlant2}">
                   Add Plant 2
                 </button>
               </div>
