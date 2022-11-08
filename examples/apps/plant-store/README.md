@@ -14,10 +14,11 @@ The plant store application contains the following structure:
   - App shell runtime
   - Mobile styles
 - Modules
-  - Home
   - Basket
   - Checkout
+  - Home
   - Products
+  - Profile
 
 ### UI loader
 
@@ -63,11 +64,15 @@ The modules are the functionality for the app. They provide the content for the 
 
 ## Building
 
-TODO
+```bash
+npm run build
+```
 
 ## Running
 
-TODO
+```bash
+npm start
+```
 
 ## Testing
 
