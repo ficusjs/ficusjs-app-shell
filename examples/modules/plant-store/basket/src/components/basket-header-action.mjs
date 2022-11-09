@@ -1,10 +1,11 @@
 import { ExtensionBuilder } from '../util/extension-builder.mjs'
 import { storeNames } from '../util/constants.mjs'
 
-export function createBasketHeaderAction ({ html, getAppState, getRouter, renderer }) {
+export function createBasketHeaderAction ({ html, getAppState, getRouter, renderer, getEventBus }) {
   return ExtensionBuilder
     .newInstance()
     .withStore(getAppState(storeNames.BASKET))
+    .withEventBus(getEventBus())
     .create({
       renderer,
       computed: {
@@ -15,6 +16,14 @@ export function createBasketHeaderAction ({ html, getAppState, getRouter, render
       handleClick () {
         const router = getRouter()
         router.push('/basket')
+      },
+      created () {
+        this.eventBus.subscribe('add-item-to-basket', item => {
+          this.store.addToBasket(item)
+        })
+        this.eventBus.subscribe('remove-item-from-basket', itemId => {
+          this.store.removeFromBasket(itemId)
+        })
       },
       render () {
         return html`
