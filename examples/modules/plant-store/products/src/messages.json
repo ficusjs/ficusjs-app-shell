@@ -8,10 +8,40 @@
       "pageTitle": "Categories"
     }
   },
+  "zh-CN": {
+    "pageTitle": "产品",
+    "search": {
+      "pageTitle": "搜一下"
+    },
+    "categories": {
+      "pageTitle": "各类"
+    }
+  },
+  "zh-TW": {
+    "pageTitle": "產品"
+    "search": {
+      "pageTitle": "搜一下"
+    },
+    "categories": {
+      "pageTitle": "各類"
+    }
+  },
+  "ru": {
+    "pageTitle": "Продукты",
+    "search": {
+      "pageTitle": "поиск"
+    },
+    "categories": {
+      "pageTitle": "категории"
+    }
+  },
   "it": {
     "pageTitle": "Prodotti",
     "search": {
       "pageTitle": "Cerca un prodotto"
+    },
+     "categories": {
+      "pageTitle": "Categorie"
     }
   }
 }

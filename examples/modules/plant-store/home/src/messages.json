@@ -2,6 +2,15 @@
   "en": {
     "pageTitle": "Home page"
   },
+  "zh-CN": {
+    "pageTitle": "主页"
+  },
+  "zh-TW": {
+    "pageTitle": "主頁"
+  },
+  "ru": {
+    "pageTitle": "домашняя страница"
+  },
   "it": {
     "pageTitle": "Home"
   }

@@ -2,6 +2,15 @@
   "en": {
     "pageTitle": "Basket page"
   },
+  "zh-CN": {
+    "pageTitle": "购物车"
+  },
+  "zh-TW": {
+    "pageTitle": "購物車"
+  },
+  "ru": {
+    "pageTitle": "Корзина"
+  },
   "it": {
     "pageTitle": "Carrello"
   }
