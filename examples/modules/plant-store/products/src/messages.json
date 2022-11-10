@@ -1,5 +1,14 @@
 {
   "en": {
     "pageTitle": "Products page"
+  },
+  "zh-CN": {
+    "pageTitle": "产品"
+  },
+  "zh-TW": {
+    "pageTitle": "產品"
+  },
+  "ru": {
+    "pageTitle": "Продукты"
   }
 }

@@ -1,5 +1,14 @@
 {
   "en": {
     "pageTitle": "Checkout page"
+  },
+  "zh-CN": {
+    "pageTitle": "结算"
+  },
+  "zh-TW": {
+    "pageTitle": "結算"
+  },
+  "ru": {
+    "pageTitle": "касса"
   }
 }
