@@ -1,0 +1,24 @@
+{
+  "name": "@example-module/plant-store-profile",
+  "version": "0.1.0",
+  "description": "Plant store profile module",
+  "type": "module",
+  "main": "src/main.mjs",
+  "module": "src/main.mjs",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Matt Levy",
+  "license": "MIT",
+  "dependencies": {
+    "ficusjs": "5.5.0"
+  },
+  "devDependencies": {
+    "standard": "16.0.4"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/main.mjs"
+    }
+  }
+}

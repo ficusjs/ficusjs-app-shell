@@ -1,7 +1,7 @@
-import { ExtensionBuilder } from 'https://cdn.skypack.dev/ficusjs@5'
+import { ExtensionBuilder } from '../util/extension-builder.mjs'
 import { storeNames } from '../util/constants.mjs'
 
-export function createBasketTotal ({ html, withStore, getAppState, renderer, getI18n }) {
+export function createBasketTotal ({ html, getAppState, renderer, getI18n }) {
   return ExtensionBuilder
     .newInstance()
     .withStore(getAppState(storeNames.BASKET))
@@ -11,12 +11,14 @@ export function createBasketTotal ({ html, withStore, getAppState, renderer, get
       computed: {
         basketTotal () {
           const items = this.store.state.basketContents
-          return items.length ? items.reduce((acc, item) => {
-            return Number(acc) + Number(item.price)
-          }, 0) : 0
+          return items.length
+            ? items.reduce((acc, item) => {
+                return Number(acc) + Number(item.price)
+              }, 0)
+            : 0
         }
       },
-      render() {
+      render () {
         return html`
           <section>
             <div>
@@ -24,7 +26,7 @@ export function createBasketTotal ({ html, withStore, getAppState, renderer, get
               <p>Shipping Costs: 15 $</p>
             </div>
           </section>
-          `;
-      },
+          `
+      }
     })
 }

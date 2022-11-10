@@ -1,5 +1,13 @@
 {
   "startPath": "/",
+  "messages": {
+    "en": {
+      "appTitle": "Plant Store"
+    },
+    "it": {
+      "appTitle": "La Bottega Delle Piante"
+    }
+  },
   "modules": [
     {
       "id": "home",
@@ -8,31 +16,53 @@
       "routes": [
         { "path": "/" }
       ],
+      "messages": {
+        "en": {
+          "navTitle": "Home"
+        },
+        "it": {
+          "navTitle": "Home"
+        }
+      },
       "layout": {
         "desktop": {
-          "header": {
-            "home": "home-header-action"
-          },
           "nav": {
-            "title": "Home",
-            "path": "/"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           },
           "aside": {
-            "home": "home-aside-action"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           },
           "footer": {
-            "home": "home-footer-action"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           }
         },
         "mobile": {
           "header": {
-            "home": "home-header-action"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           },
           "aside": {
-            "home": "home-aside-action"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           },
           "bar": {
-            "home": "home-footer-action"
+            "home": {
+              "titleI18n": "home.navTitle",
+              "path": "/"
+            }
           }
         }
       }
@@ -42,13 +72,37 @@
       "moduleUrl": "/modules/products/module.js",
       "startPath": "/products",
       "routes": [
-        { "path": "/products" }
+        { "path": "/products" },
+        { "path": "/products/categories" },
+        { "path": "/products/search" }
       ],
+      "messages": {
+        "en": {
+          "navTitle": "Products"
+        },
+        "it": {
+          "navTitle": "Prodotti"
+        }
+      },
       "layout": {
         "desktop": {
           "nav": {
-            "title": "Products",
-            "path": "/products"
+            "products": {
+              "titleI18n": "products.navTitle",
+              "path": "/products"
+            }
+          },
+          "header": {
+            "search": {
+              "type": "link",
+              "position": "right",
+              "order": 40,
+              "link": {
+                "type": "icon",
+                "path": "/products/search",
+                "icon": "search"
+              }
+            }
           }
         }
       }
@@ -57,14 +111,37 @@
       "id": "basket",
       "moduleUrl": "/modules/basket/module.js",
       "startPath": "/basket",
+      "preload": true,
       "routes": [
         { "path": "/basket" }
       ],
+      "messages": {
+        "en": {
+          "navTitle": "Basket"
+        },
+        "it": {
+          "navTitle": "Carrello"
+        }
+      },
       "layout": {
         "desktop": {
           "nav": {
-            "title": "Basket",
-            "path": "/basket"
+            "basket": {
+              "titleI18n": "basket.navTitle",
+              "path": "/basket"
+            }
+          },
+          "header": {
+            "basket": {
+              "type": "component",
+              "component": "basket-header-action",
+              "position": "right",
+              "order": 50,
+              "placeholder": {
+                "type": "icon",
+                "icon": "basket"
+              }
+            }
           }
         }
       }
@@ -76,6 +153,58 @@
       "routes": [
         { "path": "/checkout" }
       ]
+    },
+    {
+      "id": "profile",
+      "moduleUrl": "/modules/profile/module.js",
+      "startPath": "/profile",
+      "messages": {
+        "en": {
+          "header": {
+            "signIn": "Sign In",
+            "signUp": "Sign Up"
+          }
+        },
+        "it": {
+          "header": {
+            "signIn": "Entra",
+            "signUp": "Registrati"
+          }
+        }
+      },
+      "routes": [
+        { "path": "/profile/sign-in" },
+        { "path": "/profile/sign-up" },
+        { "path": "/profile/forgot-password" },
+        { "path": "/profile/reset-password" },
+        { "path": "/profile/account" }
+      ],
+      "layout": {
+        "desktop": {
+          "header": {
+            "signIn": {
+              "type": "component",
+              "component": "profile-sign-in-header-action",
+              "position": "right",
+              "order": 10,
+              "placeholder": {
+                "type": "text",
+                "textI18n": "profile.header.signIn"
+              }
+            },
+            "account": {
+              "type": "component",
+              "component": "profile-account-header-action",
+              "position": "right",
+              "order": 11,
+              "placeholder": {
+                "type": "text",
+                "textI18n": "profile.header.signUp"
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }

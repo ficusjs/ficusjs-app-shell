@@ -4,6 +4,8 @@ import { storeNames } from './constants.mjs'
 import { httpGet } from '../util/http.mjs'
 import { use } from '../util/module.mjs'
 import { mapRoutesForModules } from '../util/map-routes-for-modules.mjs'
+import { objectContainsValue } from '../util/object-contains-value.mjs'
+import { addI18nMessages } from '../util/add-i18n-messages.mjs'
 
 helpers.createAppState(storeNames.APP_CONFIG, {
   initialState: {
@@ -23,11 +25,13 @@ helpers.createAppState(storeNames.APP_CONFIG, {
       httpGet(url, {
         'Content-type': 'application/json'
       })
-        .then(data => that.loadConfigModules(data))
         .then(data => {
+          addI18nMessages(data)
           that.setState(state => ({ ...state, appConfig: { ...state.appConfig, loaded: true, data: mapRoutesForModules(data) } }))
-          resolve()
+          return data
         })
+        .then(data => that.loadConfigModules(data))
+        .then(() => resolve())
         .catch(e => reject(e))
     })
   },
@@ -64,6 +68,21 @@ helpers.createAppState(storeNames.APP_CONFIG, {
     const that = this
     const modules = that.state.appConfig.data.modules
     const module = modules.find(m => m.routes.find(r => r.path === path))
+    return that.loadModule(module)
+      .then(() => {
+        module.loaded = true
+        that.setState(state => ({ ...state, appConfig: { ...state.appConfig, data: { ...state.appConfig.data, modules } } }))
+      })
+  },
+  loadModuleByComponent (tag) {
+    const that = this
+    const modules = that.state.appConfig.data.modules
+    let module
+    for (const m of modules) {
+      if (objectContainsValue(m, tag)) {
+        module = m
+      }
+    }
     return that.loadModule(module)
       .then(() => {
         module.loaded = true

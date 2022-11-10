@@ -1,0 +1,13 @@
+{
+  "data": [
+    {
+      "id": "cat-1",
+      "title": "Category 1",
+      "description": "Category 1",
+      "thumbnailUrl": ""
+    }
+  ],
+  "pagination": {
+
+  }
+}

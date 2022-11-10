@@ -1,0 +1,38 @@
+{
+  "en": {
+    "signIn": {
+      "pageTitle": "Sign in",
+      "buttonText": "Sign In"
+    },
+    "signUp": {
+      "pageTitle": "Sign up",
+      "buttonText": "Sign Up"
+    },
+    "forgotPassword": {
+      "pageTitle": "Forgot your password?"
+    },
+    "resetPassword": {
+      "pageTitle": "Reset your password"
+    },
+    "account": {
+      "pageTitle": "Your account"
+    }
+  },
+  "it": {
+    "signIn": {
+      "pageTitle": "Entra"
+    },
+    "signUp": {
+      "pageTitle": "Registrati"
+    },
+    "forgotPassword": {
+      "pageTitle": "Hai dimenticato la password?"
+    },
+    "resetPassword": {
+      "pageTitle": "Reimposta la password"
+    },
+    "account": {
+      "pageTitle": "Il tuo account"
+    }
+  }
+}

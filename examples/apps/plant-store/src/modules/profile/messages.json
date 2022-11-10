@@ -1,0 +1,19 @@
+{
+  "en": {
+    "signIn": {
+      "pageTitle": "Sign in"
+    },
+    "signUp": {
+      "pageTitle": "Sign up"
+    },
+    "forgotPassword": {
+      "pageTitle": "Forgot your password?"
+    },
+    "resetPassword": {
+      "pageTitle": "Reset your password"
+    },
+    "account": {
+      "pageTitle": "Your account"
+    }
+  }
+}

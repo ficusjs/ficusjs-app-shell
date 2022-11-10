@@ -1,0 +1,8 @@
+{
+  "id": "profile",
+  "moduleUrl": "/modules/profile/module.js",
+  "startPath": "/profile",
+  "routes": [
+    { "path": "/profile" }
+  ]
+}

@@ -14,10 +14,11 @@ The plant store application contains the following structure:
   - App shell runtime
   - Mobile styles
 - Modules
-  - Home
   - Basket
   - Checkout
+  - Home
   - Products
+  - Profile
 
 ### UI loader
 
@@ -41,7 +42,13 @@ The app UI mobile is responsible for loading the app shell runtime and the mobil
 
 ### App shell runtime
 
-The app shell runtime is the runtime for the app shell. It provides functionality for modules.
+The app shell runtime is the runtime for the app shell. It provides functionality for modules. This includes:
+
+- Web component creation and extension
+- Application state management - data stores and finite state machines
+- Internationalization
+- Pub/sub event bus
+- Router for multiple pages
 
 ### Desktop styles
 
@@ -57,11 +64,15 @@ The modules are the functionality for the app. They provide the content for the 
 
 ## Building
 
-TODO
+```bash
+npm run build
+```
 
 ## Running
 
-TODO
+```bash
+npm start
+```
 
 ## Testing
 

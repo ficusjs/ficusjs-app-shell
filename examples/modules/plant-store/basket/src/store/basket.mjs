@@ -1,18 +1,18 @@
-import { storeNames } from "../util/constants.mjs";
+import { storeNames } from '../util/constants.mjs'
 
-export function createBasketStore({ createAppState }) {
+export function createBasketStore ({ createAppState }) {
   createAppState(storeNames.BASKET, {
     initialState: {
-      basketContents: [],
+      basketContents: []
     },
-    addToBasket(plant) {
+    addToBasket (plant) {
       this.state.basketContents = [...this.state.basketContents, plant]
     },
-    removeFromBasket(plantId) {
+    removeFromBasket (plantId) {
       const plantRemoved = this.state.basketContents.filter(
         (plant) => plant.id !== plantId
-      );
-      this.setState(() => ({ basketContents: plantRemoved }));
-    },
-  });
+      )
+      this.setState(() => ({ basketContents: plantRemoved }))
+    }
+  })
 }

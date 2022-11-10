@@ -10,6 +10,9 @@
   },
   "author": "Matt Levy",
   "license": "MIT",
+  "dependencies": {
+    "ficusjs": "5.5.0"
+  },
   "devDependencies": {
     "standard": "16.0.4"
   },

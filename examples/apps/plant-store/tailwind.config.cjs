@@ -1,13 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: {
-    relative: true,
-    files: [
-      './index.html',
-      './src/**/*.{js,ts,jsx,tsx}',
-      '../../modules/plant-store/home/src/**/*.{js,ts,jsx,tsx,mjs}'
-    ],
-  },
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx,mjs}',
+    '../../modules/plant-store/*/src/**/*.{js,ts,jsx,tsx,mjs}'
+  ],
   theme: {
     extend: {
       colors: {
