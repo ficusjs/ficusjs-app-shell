@@ -18,7 +18,7 @@
     }
   },
   "zh-TW": {
-    "pageTitle": "產品"
+    "pageTitle": "產品",
     "search": {
       "pageTitle": "搜一下"
     },
@@ -40,7 +40,7 @@
     "search": {
       "pageTitle": "Cerca un prodotto"
     },
-     "categories": {
+    "categories": {
       "pageTitle": "Categorie"
     }
   }
