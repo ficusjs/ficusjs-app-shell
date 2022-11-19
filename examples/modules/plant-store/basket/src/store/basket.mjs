@@ -10,7 +10,7 @@ export function createBasketStore ({ createAppState }) {
     },
     removeFromBasket (plantId) {
       const index = this.state.basketContents.map(plant => plant.id).lastIndexOf(plantId)
-      this.state.basketContents = [...this.state.basketContents.slice(0, index), ...this.state.basketContents.slice(index+1)]
+      this.state.basketContents = [...this.state.basketContents.slice(0, index), ...this.state.basketContents.slice(index + 1)]
     },
     getBasketContentInfo () {
       const basketContentInfo = {}
@@ -25,6 +25,14 @@ export function createBasketStore ({ createAppState }) {
         }
       })
       return Object.keys(basketContentInfo).map(key => basketContentInfo[key])
+    },
+    getBasketTotal () {
+      const items = this.state.basketContents
+      return items.length
+        ? items.reduce((acc, item) => {
+            return Number(acc) + Number(item.price)
+          }, 0)
+        : 0
     }
   })
 }

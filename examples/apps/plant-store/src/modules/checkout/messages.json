@@ -1,5 +1,19 @@
 {
   "en": {
-    "pageTitle": "Checkout page"
+    "pageTitle": "Checkout page",
+    "summary": "Order Summary"
+  },
+  "zh-CN": {
+    "pageTitle": "结算"
+  },
+  "zh-TW": {
+    "pageTitle": "結算"
+  },
+  "ru": {
+    "pageTitle": "касса"
+  },
+  "it": {
+    "pageTitle": "Cassa",
+    "summary": "Riepilogo Ordine"
   }
 }
