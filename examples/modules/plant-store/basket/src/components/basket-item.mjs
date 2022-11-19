@@ -11,15 +11,24 @@ export function createBasketItem ({ html, getAppState, renderer, getI18n }) {
       props: {
         item: {
           type: Object
+        },
+        itemCount: {
+          type: Number
         }
       },
       computed: {
         basketItem () {
           return this.props.item
+        },
+        count () {
+          return this.props.itemCount
         }
       },
       removeFromBasket () {
         this.store.removeFromBasket(this.basketItem.id)
+      },
+      addToBasket () {
+        this.store.addToBasket(this.basketItem)
       },
       render () {
         return html`
@@ -33,9 +42,13 @@ export function createBasketItem ({ html, getAppState, renderer, getI18n }) {
                 <p>${this.basketItem.description}</p>
                 <p>${this.basketItem.price}$</p>
               </div>
-              <div>
+              <div class="ml-2">
+                <button onclick="${this.addToBasket}">
+                  Add Amount
+                </button>
+                <p class="text-2xl">${this.count}</p>
                 <button onclick="${this.removeFromBasket}">
-                  Remove From The Basket
+                  Decrease Amount
                 </button>
               </div>
             </div>

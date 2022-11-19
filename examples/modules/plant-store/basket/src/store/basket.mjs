@@ -9,10 +9,22 @@ export function createBasketStore ({ createAppState }) {
       this.state.basketContents = [...this.state.basketContents, plant]
     },
     removeFromBasket (plantId) {
-      const plantRemoved = this.state.basketContents.filter(
-        (plant) => plant.id !== plantId
-      )
-      this.setState(() => ({ basketContents: plantRemoved }))
+      const index = this.state.basketContents.map(plant => plant.id).lastIndexOf(plantId)
+      this.state.basketContents = [...this.state.basketContents.slice(0, index), ...this.state.basketContents.slice(index+1)]
+    },
+    getBasketContentInfo () {
+      const basketContentInfo = {}
+      this.state.basketContents.forEach(plant => {
+        if (!basketContentInfo[plant.id]) {
+          basketContentInfo[plant.id] = {
+            count: 1,
+            info: plant
+          }
+        } else {
+          basketContentInfo[plant.id].count += 1
+        }
+      })
+      return Object.keys(basketContentInfo).map(key => basketContentInfo[key])
     }
   })
 }

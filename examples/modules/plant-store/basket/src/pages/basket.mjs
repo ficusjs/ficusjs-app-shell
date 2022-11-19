@@ -23,8 +23,8 @@ export function createBasketPage (helpers) {
           return html`
             <fas-page page-title="${this.pageTitle}">
               <div>
-                ${this.store.basket.state.basketContents.map(
-                  (item) => html` <basket-item .item="${item}"></basket-item>`
+                ${this.store.basket.getBasketContentInfo().map(
+                  (item) => html`<basket-item item-count="${item.count}" .item="${item.info}"></basket-item>`
                 )}
               </div>
               <basket-total></basket-total>
