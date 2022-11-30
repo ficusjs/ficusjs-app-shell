@@ -11,7 +11,7 @@
   "author": "Matt Levy",
   "license": "MIT",
   "dependencies": {
-    "ficusjs": "6.1.1"
+    "ficusjs": "6.2.0"
   },
   "devDependencies": {
     "standard": "16.0.4"
