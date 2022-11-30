@@ -4,8 +4,34 @@
     "search": {
       "pageTitle": "Product search"
     },
-    "categories": {
-      "pageTitle": "Categories"
-    }
+    "currency": "£{{amount}}"
+  },
+  "zh-CN": {
+    "pageTitle": "产品",
+    "search": {
+      "pageTitle": "搜一下"
+    },
+    "currency": "GBP {{amount}}"
+  },
+  "zh-TW": {
+    "pageTitle": "產品",
+    "search": {
+      "pageTitle": "搜一下"
+    },
+    "currency": "GBP {{amount}}"
+  },
+  "ru": {
+    "pageTitle": "Продукты",
+    "search": {
+      "pageTitle": "поиск"
+    },
+    "currency": "GBP {{amount}}"
+  },
+  "it": {
+    "pageTitle": "Prodotti",
+    "search": {
+      "pageTitle": "Cerca un prodotto"
+    },
+    "currency": "GBP {{amount}}"
   }
 }

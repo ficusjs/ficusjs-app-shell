@@ -1,5 +1,5 @@
-import { createCategoriesStore } from './categories.mjs'
+import { createProductsStore } from './products.mjs'
 
 export function createStores (helpers) {
-  createCategoriesStore(helpers)
+  createProductsStore(helpers)
 }

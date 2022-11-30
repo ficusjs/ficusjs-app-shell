@@ -1,14 +1,58 @@
 {
   "data": [
     {
-      "id": "",
-      "title": "",
-      "description": "",
-      "categories": [],
-      "price": ""
+      "id": "001",
+      "name": "ZZ Plant",
+      "description": "ZZ plant",
+      "price": "20",
+      "image_url": "/assets/img/home-page-hero-image-tile-01.jpg"
+    },
+    {
+      "id": "002",
+      "name": "Dracaena",
+      "description": "Dracaena",
+      "price": "18",
+      "image_url": "/assets/img/home-page-hero-image-tile-02.jpg"
+    },
+    {
+      "id": "003",
+      "name": "Bracteata",
+      "description": "Bracteata",
+      "price": "23",
+      "image_url": "/assets/img/home-page-hero-image-tile-03.jpg"
+    },
+    {
+      "id": "004",
+      "name": "Japonicus",
+      "description": "Japonicus",
+      "price": "40",
+      "image_url": "/assets/img/home-page-hero-image-tile-04.jpg"
+    },
+    {
+      "id": "005",
+      "name": "Pothos",
+      "description": "Pothos",
+      "price": "12",
+      "image_url": "/assets/img/home-page-hero-image-tile-05.jpg"
+    },
+    {
+      "id": "006",
+      "name": "Monstera",
+      "description": "Monstera",
+      "price": "33",
+      "image_url": "/assets/img/home-page-hero-image-tile-06.jpg"
+    },
+    {
+      "id": "007",
+      "name": "Ficus",
+      "description": "Ficus",
+      "price": "28",
+      "image_url": "/assets/img/home-page-hero-image-tile-07.jpg"
     }
   ],
   "pagination": {
-    
+    "offset": 0,
+    "limit": 10,
+    "totalResultCount": 7
   }
 }
