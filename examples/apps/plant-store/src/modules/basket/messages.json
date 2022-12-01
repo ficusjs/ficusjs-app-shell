@@ -1,5 +1,22 @@
 {
   "en": {
-    "pageTitle": "Basket page"
+    "pageTitle": "Basket",
+    "currency": "£{{amount}}"
+  },
+  "zh-CN": {
+    "pageTitle": "购物车",
+    "currency": "GBP {{amount}}"
+  },
+  "zh-TW": {
+    "pageTitle": "購物車",
+    "currency": "GBP {{amount}}"
+  },
+  "ru": {
+    "pageTitle": "Корзина",
+    "currency": "GBP {{amount}}"
+  },
+  "it": {
+    "pageTitle": "Carrello",
+    "currency": "GBP {{amount}}"
   }
 }

@@ -30,30 +30,31 @@ export function createBasketItem ({ html, getAppState, renderer, getI18n }) {
       addToBasket () {
         this.store.addToBasket(this.basketItem)
       },
+      currency (amount) {
+        return this.i18n ? this.i18n.t('basket.currency', { amount }) : 'GBP'
+      },
       render () {
         return html`
-          <article>
-            <div class="flex">
-              <div class="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
-                <img src="${this.basketItem.image_url}" alt="" class="h-full w-full object-cover object-center">
-              </div>
-              <div>
-                <p>${this.basketItem.name}</p>
-                <p>${this.basketItem.description}</p>
-                <p>${this.basketItem.price}$</p>
-              </div>
-              <div class="ml-2">
-                <button onclick="${this.addToBasket}">
-                  Add Amount
-                </button>
-                <p class="text-2xl">${this.count}</p>
-                <button onclick="${this.removeFromBasket}">
-                  Decrease Amount
-                </button>
-              </div>
+          <article class="flex">
+            <div class="h-64 p-6 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+              <img src="${this.basketItem.image_url}" alt="" class="h-full max-w-full object-cover object-center">
+            </div>
+            <div class="p-6">
+              <p>${this.basketItem.name}</p>
+              <p>${this.basketItem.description}</p>
+              <p>${this.currency(this.basketItem.price)}</p>
+            </div>
+            <div class="p-6">
+              <button type="button" onclick="${this.addToBasket}" class="inline-block px-3 py-1.5 text-lg bg-gray-200 text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">
+                +
+              </button>
+              <span class="text-lg px-4">${this.count}</span>
+              <button type="button" onclick="${this.removeFromBasket}" class="inline-block px-3 py-1.5 text-lg bg-gray-200 text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">
+                -
+              </button>
             </div>
           </article>
-          `
+        `
       }
     })
 }
